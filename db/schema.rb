@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 2020_11_24_115923) do
-
+ActiveRecord::Schema.define(version: 2020_11_24_133503) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,7 +47,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_115923) do
     t.text "bio"
     t.integer "price"
     t.integer "max_cap"
-    t.integer "numbers_of_kids"
+    t.integer "number_of_kids"
     t.boolean "can_host"
     t.integer "year_of_birth"
     t.boolean "nanny_true"
