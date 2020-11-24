@@ -29,8 +29,8 @@ puts 'Creating fake users...'
     is_nanny: true,
     price: rand(5..20),
     
-    # longitude: Faker::Address.longitude,
-    # latitude: Faker::Address.latitude,
+    longitude: Faker::Address.longitude,
+    latitude: Faker::Address.latitude,
     # profile_picture: Faker::Avatar.image, ??
   )
   user.save!
