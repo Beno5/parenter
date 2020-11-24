@@ -26,7 +26,9 @@ puts 'Creating fake users...'
     number_of_kids:  rand(1..4),
     can_host: [true, false].sample,
     year_of_birth: Faker::Number.number(digits: 4) ,
-    is_nanny: true
+    is_nanny: true,
+    price: rand(5..20),
+    
     # longitude: Faker::Address.longitude,
     # latitude: Faker::Address.latitude,
     # profile_picture: Faker::Avatar.image, ??
