@@ -11,3 +11,17 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import 'mapbox-gl/dist/mapbox-gl';
+
+/* ----------------------
+primary color: #EC4369
+secondary color: ?
+neutral color: #F8F9FC
+typeface color: #454E57
+------------------------*/
+
+html * {
+    color: #454E57;
+}
+
