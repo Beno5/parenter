@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_11_24_133503) do
     t.integer "number_of_kids"
     t.boolean "can_host"
     t.integer "year_of_birth"
-    t.boolean "nanny_true"
+    t.boolean "is_nanny"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
