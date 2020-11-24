@@ -11,3 +11,19 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+/* ----------------------
+primary color: #EC4369
+secondary color: ?
+neutral color: #F8F9FC
+typeface color: #454E57
+------------------------*/
+
+html * {
+    color: #454E57;
+}
+
+.wrapper {
+    // background: #F8F9FC;
+    height: 100vh;
+}
