@@ -8,8 +8,12 @@
 
 require 'faker'
 
-puts 'Creating fake users...'
+puts "Destroying all users"
+
 User.destroy_all
+
+puts 'Creating fake users...'
+
 20.times do
   user = User.new(
     email: Faker::Internet.email,
@@ -22,6 +26,7 @@ User.destroy_all
     number_of_kids:  rand(1..4),
     can_host: [true, false].sample,
     year_of_birth: Faker::Number.number(digits: 4) ,
+    is_nanny: true
     # longitude: Faker::Address.longitude,
     # latitude: Faker::Address.latitude,
     # profile_picture: Faker::Avatar.image, ??
