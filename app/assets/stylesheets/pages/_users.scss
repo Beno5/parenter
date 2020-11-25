@@ -1,0 +1,8 @@
+.users-page {
+  display: flex;
+
+  .users-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
