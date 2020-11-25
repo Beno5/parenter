@@ -11,6 +11,7 @@
 
     <div class="users-grid mb-3 mt-3">
     <% @users.each do |user| %>
+    <%= link_to user_path(user) do %>
       <div class="card-product">
         <%= image_tag "zim.jpg"%>
         <div class="card-product-infos">
@@ -19,6 +20,7 @@
           <p>Rating</p>
         </div>
       </div>
+        <% end %>
       <% end %>
     </div>
   </div>
