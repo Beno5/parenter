@@ -5,6 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require "open-uri"
 
 require 'faker'
 
@@ -14,27 +15,56 @@ User.destroy_all
 
 puts 'Creating fake users...'
 
-20.times do
-  user = User.new(
-    email: Faker::Internet.email,
+
+  alice = User.new(
+    email: "alice@example.com",
     password: "123456",
-    first_name: Faker::Name.first_name,
-    last_name: Faker::Name.last_name,
-    address: "#{Faker::Address.street_address}, #{Faker::Address.city}",
+    first_name: "Alice",
+    last_name: "Parker",
+    address: "Martin-Luther-Straße 65, 70372 Stuttgart",
     bio: "I like to take care of children and I had very good references",
-    max_cap:  rand(1..5),
-    number_of_kids:  rand(1..4),
-    can_host: [true, false].sample,
-    year_of_birth: Faker::Number.number(digits: 4) ,
+    max_cap:  2,
+    can_host: true,
+    year_of_birth: 1991,
     is_nanny: true,
-    price: rand(5..20),
-    
-    longitude: Faker::Address.longitude,
-    latitude: Faker::Address.latitude,
-    # profile_picture: Faker::Avatar.image, ??
+    price: 8,
   )
-  user.save!
-end
+  alice.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606303161/luis-villasmil-6qf1uljGpU4-unsplash_ske56e.jpg"), filename: "alice.jpg", content_type: 'image/png')
+  alice.save!
+
+############################# 
+
+  sarah = User.new(
+    email: "sarah@example.com",
+    password: "123456",
+    first_name: "Sarah",
+    last_name: "Lahm",
+    address: "Martin-Luther-Straße 80, 70372 Stuttgart",
+    bio: "I like to take care of children and I had very good references",
+    max_cap:  3,
+    can_host: false,
+    year_of_birth: 1995,
+    is_nanny: true,
+    price: 10,
+  )
+  sarah.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606311898/christopher-campbell-rDEOVtE7vOs-unsplash_hnpf2t.jpg"), filename: "sarah.jpg", content_type: 'image/png')
+  sarah.save!
+
+  ############################# 
+
+  michael = User.new(
+    email: "michael@example.com",
+    password: "123456",
+    first_name: "Michael",
+    last_name: "Scofield",
+    address: "Martha-Schmidtmann-Straße 7-9, 70374 Stuttgart",
+    number_of_kids: 2,
+    can_host: true,
+    year_of_birth: 1985,
+    is_nanny: false,
+  )
+  michael.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606312247/7399107_orig_g31vi1.jpg"), filename: "michael.jpg", content_type: 'image/png')
+  michael.save!
+
 puts 'Finished!'
 
-# alice.picture.attach(io: URI.open("https://source.unsplash.com/38dk7QXDBzs"), filename: "alice", content_type: 'image/png')
