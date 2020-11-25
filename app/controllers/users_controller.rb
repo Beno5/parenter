@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   skip_before_action :authenticate_user!
+  before_action :find_index, only: %i[show]
 
   def index
     if params[:query].present?
@@ -22,5 +23,11 @@ class UsersController < ApplicationController
   end
 
   def show
+  end
+
+  private
+
+  def find_index
+    @user = User.find(params[:id])
   end
 end
