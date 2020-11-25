@@ -1,7 +1,7 @@
 
-<div class="users-page">
-  <div class="users-list mb-3 mt-3">
-    <%= form_tag users_path, method: :get do %>
+<div class="users-page mb-3 mt-3">
+  <div class="users-list mr-2">
+    <%= form_tag users_path, method: :get, style: "display: flex;" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
@@ -11,12 +11,12 @@
 
     <div class="users-grid mb-3 mt-3">
     <% @users.each do |user| %>
-    <%= link_to user_path(user) do %>
+    <%= link_to user_path(user), class:"hover-delete" do %>
       <div class="card-product">
-        <%= cl_image_tag user.photo.key, class:"card-product img", crop: :fill %>
+        <%= cl_image_tag user.photo.key, class:"card-product", crop: :fill %>
         <div class="card-product-infos">
-          <h2><%= user.first_name %></h2>
-          <h5 class= "right"><%= user.price %></h5>
+          <h2 ><%= user.first_name %></h2>
+          <h5 class= "right">€<%= user.price %></h5>
           <p>Rating</p>
         </div>
       </div>
@@ -27,7 +27,7 @@
 
     
   <div id="map"
-    style="width: 100%; height: 600px;"
+    style="width: 100%; height: 600px; border-radius: 5%;"
     data-markers="<%= @markers.to_json %>"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
