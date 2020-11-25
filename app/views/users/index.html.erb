@@ -11,14 +11,16 @@
 
     <div class="users-grid mb-3 mt-3">
     <% @users.each do |user| %>
+    <%= link_to user_path(user) do %>
       <div class="card-product">
-        <%= image_tag "zim.jpg"%>
+        <%= cl_image_tag user.photo.key, class:"card-product img", crop: :fill %>
         <div class="card-product-infos">
           <h2><%= user.first_name %></h2>
           <h5 class= "right"><%= user.price %></h5>
           <p>Rating</p>
         </div>
       </div>
+        <% end %>
       <% end %>
     </div>
   </div>
