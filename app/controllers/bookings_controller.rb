@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking_index, only: [:show, :edit, :update, :destroy]
+  before_action :find_booking_index, only: %i[show edit update destroy]
 
   def show
   end
@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @user_nanny = User.find(params[:nanny_id])
     @booking = Booking.new(booking_params)
     @booking.parent = current_user
-    
+
     if @booking.save!
       redirect_to booking_path(@booking)
     else
@@ -36,7 +36,6 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
-    
   end
 
   private
