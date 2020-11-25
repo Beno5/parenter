@@ -34,6 +34,42 @@ puts 'Creating fake users...'
 
 ############################# 
 
+  sarah1 = User.new(
+    email: "sarah1@example.com",
+    password: "123456",
+    first_name: "Sarah",
+    last_name: "Lahm",
+    address: "Martin-Luther-Straße 80, 70372 Stuttgart",
+    bio: "I like to take care of children and I had very good references",
+    max_cap:  3,
+    can_host: false,
+    year_of_birth: 1995,
+    is_nanny: true,
+    price: 10,
+  )
+  sarah1.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606311898/christopher-campbell-rDEOVtE7vOs-unsplash_hnpf2t.jpg"), filename: "sarah1.jpg", content_type: 'image/png')
+  sarah1.save!
+
+  #################################
+
+  alice1 = User.new(
+    email: "alice1@example.com",
+    password: "123456",
+    first_name: "Alice",
+    last_name: "Parker",
+    address: "Martin-Luther-Straße 65, 70372 Stuttgart",
+    bio: "I like to take care of children and I had very good references",
+    max_cap:  2,
+    can_host: true,
+    year_of_birth: 1991,
+    is_nanny: true,
+    price: 8,
+  )
+  alice1.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606303161/luis-villasmil-6qf1uljGpU4-unsplash_ske56e.jpg"), filename: "alice1.jpg", content_type: 'image/png')
+  alice1.save!
+
+############################# 
+
   sarah = User.new(
     email: "sarah@example.com",
     password: "123456",
