@@ -1,9 +1,11 @@
+<% content_for :nav, render('shared/custom_nav') %>
 <div class='wrapper'>
     <div class='banner-container'>
 
-        <h1>PARENTER</h1>
+        <%= image_tag "Parenter Logo 1.png"%>
+        
         <p>Find nannies.</p>
 
-        <a href="#" class='btn btn-primary'>GET STARTED</a>
+        <%= link_to "GET STARTED", users_path, class: "btn btn-primary" %>
     </div>
 </div>

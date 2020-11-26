@@ -12,7 +12,11 @@
   </head>
 
   <body>
+    <% if content_for? :nav %>
+    <%= content_for :nav %>
+  <% else %>
     <%= render 'shared/navbar' %>
+  <% end %>
     <%= render 'shared/flashes' %>
 
 
