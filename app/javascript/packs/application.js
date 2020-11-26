@@ -26,11 +26,14 @@ require("channels")
 import "bootstrap";
 import { initCalendar } from "../plugins/init_calendar";
 import { initMapbox } from '../plugins/init_mapbox';
+import { initChatroomCable } from '../channels/chatroom_channel';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  initChatroomCable();
   initCalendar();
 })
+
