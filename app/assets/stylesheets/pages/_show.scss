@@ -5,3 +5,11 @@ table {
 td {
     padding: 12px 20px;
 }
+
+.show-page {
+  display: flex;
+  .show-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
