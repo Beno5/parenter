@@ -8,6 +8,7 @@
   align-items: center;
   border-radius: 50px;
   width: 250px;
+  margin: 5px;
 }
 
 .card-product img {
@@ -25,6 +26,7 @@
   margin: 0;
   //position: absolute;
   top: 10px;
+  color:#EC4469;
 }
 
 .card-product p {
@@ -35,6 +37,7 @@
   margin-top: 8px;
   bottom: 10px;
   // position: absolute;
+  color:#EC4469;
 }
 
 .card-product .card-product-infos {
@@ -47,21 +50,12 @@
     right: 5px;
     vertical-align: middle;
     line-height: 5px;
+    color:#EC4469;
     }
 }
 
-// show
-.show-card {
-  width: 500px;
-  height: 400px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
-}
-
-.show-card__info i {
-  color: #fdb434;
+.hover-delete {
+  text-decoration: none !important;
 }
 
 

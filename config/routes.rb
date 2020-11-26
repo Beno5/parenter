@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :bookings, only: [:new, :create, :show, :edit, :update]
   resources :reviews, only: [:new, :create, :destroy]
-  resources :dashboard, only: [:index, :show]
+  resources :dashboards, only: [:index, :show]
 end

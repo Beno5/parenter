@@ -6,10 +6,20 @@ const initCalendar = () => {
   const calendar = new Calendar(calendarEl, {
     // plugins: [ dayGridPlugin ]
     plugins: [ timeGridPlugin ],
-    initialView: 'timeGridWeek'
+    initialView: 'timeGridWeek',
+    events: [
+      { 
+        title: 'Occupied',
+        start: '2020-11-26T12:00:00',
+        // startTime: '12:00',
+        end: '2020-11-26T18:00:00',
+        // endTime: '18:00',
+      }
+    ]
   });
 
   calendar.render();
 }
+// 
 
 export { initCalendar };
