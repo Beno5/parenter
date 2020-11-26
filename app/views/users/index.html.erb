@@ -1,7 +1,7 @@
 
 <div class="users-page mb-3 mt-3">
   <div class="users-list mr-2">
-    <%= form_tag users_path, method: :get, style: "display: flex;" do %>
+    <%= form_tag users_path, method: :get, class: "user-search" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
