@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @user_nanny = User.find(params[:nanny_id])
+    @user_nanny = User.find(params[:booking][:nanny_id])
     @booking = Booking.new(booking_params)
     @booking.parent = current_user
 

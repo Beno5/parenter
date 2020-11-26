@@ -1,10 +1,7 @@
 
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
-
 <div class="show-card">
-    <%= image_tag("zim.jpg", class: "avatar-very-large") %>
-
+    <%= cl_image_tag @user.photo.key, class:"avatar-very-large", crop: :fill %>
+    
     <table>
         <tr>
             <td>Experience: xxx xxx xxx</td>
@@ -30,12 +27,16 @@
         <i class="fas fa-star"></i>
     </div>
 
-    <a href="#" class="btn btn-primary">BOOK</a>
+ 
 </div>
 
+<%= simple_form_for @booking do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <%= f.input :nanny_id, as: :hidden, input_html: {value: params[:id]} %>
+  <%= f.submit "BOOK", class: "btn btn-primary" %>
+<% end %>
 
- <%# Do not remove Calendar %>
 <div id="calendar">
-
 
 </div>
