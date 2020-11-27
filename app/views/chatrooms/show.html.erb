@@ -1,3 +1,4 @@
+<div class="container">
 <h1>#<%= @chatroom.name %></h1>
 <div id="messages" data-chatroom-id="<%= @chatroom.id %>">
   <% @chatroom.messages.each do |message| %>
@@ -15,3 +16,4 @@
   <%= f.input :content, label: false, placeholder: "Message ##{@chatroom.name}" %>
   <%= f.submit 'Send' %>
 <% end %>
+</div>
