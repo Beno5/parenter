@@ -1,9 +1,33 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="show-book-card">
+  <div class="book-card">
+    <%= simple_form_for @booking do |f| %>
+      <%= f.input :start_date %>
+      <%= f.input :end_date %>
+      <%= f.input :nanny_id, as: :hidden, input_html: {value: params[:id]} %>
+      <%= f.submit "BOOK", class: "btn btn-primary" %>
+    <% end %>
 
+    <div class="show-card">
+      <%= cl_image_tag @user.photo.key, class:"avatar-very-large", crop: :fill %>
+      <ul>
+        <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
+        <li>Price: <%= @user.price %> €/h</li>
+        <li>Max. capacity: <%= @user.max_cap %></li>
+        <li>Number of kids: <%= @user.number_of_kids %></li>
+        <li>Year of birth: <%= @user.year_of_birth%></li>
+      </ul>
 
- <%# Do not remove Calendar %>
-<div id="calendar">
-
-
+      <div class="show-card__info">
+        <i class="fas fa-star"></i> 
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div> 
+    </div>
+  </div>
+  
+  <div id="calendar">
+  </div>
+    
 </div>
