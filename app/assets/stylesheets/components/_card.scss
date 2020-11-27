@@ -58,3 +58,25 @@
   text-decoration: none !important;
 }
 
+// show
+
+.show-book-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.show-card {
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.show-card__info i {
+  color: #fdb434;
+}
+
