@@ -17,9 +17,11 @@
         <%= link_to "My Dashboard", dashboards_path, class: "nav-link" %>
       </li>
     </ul>
-    <div class="nav-item dropdown">
+    <div class="nav-item dropdown center-alignment">
       <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-      <%= current_user.first_name %>
+      <div>
+        <%= current_user.first_name %>
+      </div>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
         <%= link_to "Action", "#", class: "dropdown-item" %>
         <%= link_to "Another action", "#", class: "dropdown-item" %>
