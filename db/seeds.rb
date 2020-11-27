@@ -114,6 +114,7 @@ puts 'Creating fake users...'
     can_host: true,
     year_of_birth: 1985,
     is_nanny: true,
+    price: 13,
   )
   lucy.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606487597/ansley-ventura---SIXoW9s9A-unsplash_cfb58n.jpg"), filename: "lucy.jpg", content_type: 'image/png')
   lucy.save!
@@ -129,7 +130,8 @@ puts 'Creating fake users...'
       number_of_kids: 2,
       can_host: true,
       year_of_birth: 1989,
-      is_nanny: false,
+      is_nanny: true,
+      price: 10,
     )
     helen.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606487641/courtney-cook-TSZo17r3m0s-unsplash_kwub5d.jpg"), filename: "helen.jpg", content_type: 'image/png')
     helen.save!
@@ -146,6 +148,7 @@ puts 'Creating fake users...'
     can_host: true,
     year_of_birth: 1990,
     is_nanny: true,
+    price: 7,
   )
   bob.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606487693/christian-buehner-DItYlc26zVI-unsplash_eh9yvh.jpg"), filename: "bob.jpg", content_type: 'image/png')
   bob.save!
@@ -161,7 +164,8 @@ puts 'Creating fake users...'
       number_of_kids: 2,
       can_host: true,
       year_of_birth: 1977,
-      is_nanny: false,
+      is_nanny: true,
+      price: 15,
     )
     teresa.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606487738/christiana-rivers-O_XIvDy0pcs-unsplash_qct7k4.jpg"), filename: "teresa.jpg", content_type: 'image/png')
     teresa.save!
@@ -178,6 +182,7 @@ puts 'Creating fake users...'
     can_host: true,
     year_of_birth: 1981,
     is_nanny: true,
+    price: 12,
   )
   alfred.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606487793/irene-strong-v2aKnjMbP_k-unsplash_guy718.jpg"), filename: "alfred.jpg", content_type: 'image/png')
   alfred.save!
