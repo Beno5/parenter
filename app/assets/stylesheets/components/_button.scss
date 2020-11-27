@@ -14,3 +14,10 @@
 .btn {
     // text-decoration: none !important;
 }
+
+.position-absolute-bottom {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translate(-50%, -50%);
+}
