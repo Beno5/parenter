@@ -102,6 +102,85 @@ puts 'Creating fake users...'
   michael.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606312247/7399107_orig_g31vi1.jpg"), filename: "michael.jpg", content_type: 'image/png')
   michael.save!
 
+  ############################# 
+
+  lucy = User.new(
+    email: "lucy@example.com",
+    password: "123456",
+    first_name: "Lucy",
+    last_name: "Schmitt",
+    address: "Mercedesstraße 100, 70372 Stuttgart",
+    number_of_kids: 1,
+    can_host: true,
+    year_of_birth: 1985,
+    is_nanny: true,
+  )
+  michael.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606312247/7399107_orig_g31vi1.jpg"), filename: "michael.jpg", content_type: 'image/png')
+  michael.save!
+
+    ############################# 
+
+    michael = User.new(
+      email: "helen@example.com",
+      password: "123456",
+      first_name: "Helen",
+      last_name: "Pfeffer",
+      address: "Wilhelma 13, 70376 Stuttgart",
+      number_of_kids: 2,
+      can_host: true,
+      year_of_birth: 1989,
+      is_nanny: false,
+    )
+    michael.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606312247/7399107_orig_g31vi1.jpg"), filename: "michael.jpg", content_type: 'image/png')
+    michael.save!
+
+      ############################# 
+
+  michael = User.new(
+    email: "bob@example.com",
+    password: "123456",
+    first_name: "Bob",
+    last_name: "Smith",
+    address: "Thomastraße 99, 70192 Stuttgartt",
+    number_of_kids: 3,
+    can_host: true,
+    year_of_birth: 1990,
+    is_nanny: true,
+  )
+  michael.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606312247/7399107_orig_g31vi1.jpg"), filename: "michael.jpg", content_type: 'image/png')
+  michael.save!
+
+    ############################# 
+
+    michael = User.new(
+      email: "teresa@example.com",
+      password: "123456",
+      first_name: "Teresa",
+      last_name: "Herzog",
+      address: "Stresemannstraße 6, 70191 Stuttgart",
+      number_of_kids: 2,
+      can_host: true,
+      year_of_birth: 1977,
+      is_nanny: false,
+    )
+    michael.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606312247/7399107_orig_g31vi1.jpg"), filename: "michael.jpg", content_type: 'image/png')
+    michael.save!
+
+      ############################# 
+
+  michael = User.new(
+    email: "alfred@example.com",
+    password: "123456",
+    first_name: "Alfred",
+    last_name: "Weber",
+    address: "Wartbergstraße 40, 70191 Stuttgart",
+    number_of_kids: 1,
+    can_host: true,
+    year_of_birth: 1981,
+    is_nanny: true,
+  )
+  michael.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606312247/7399107_orig_g31vi1.jpg"), filename: "michael.jpg", content_type: 'image/png')
+  michael.save!
 
   booking5 = Booking.create(nanny: sarah, parent: michael, start_date: "Thu, 26 Nov 2020 12:06:13 UTC +00:00", end_date: "Thu, 26 Nov 2020 15:16:13 UTC +00:00")
 
