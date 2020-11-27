@@ -10,24 +10,29 @@
     <div class="show-card">
       <%= cl_image_tag @user.photo.key, class:"avatar-very-large", crop: :fill %>
       <ul>
-        <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
-        <li>Price: <%= @user.price %> €/h</li>
-        <li>Max. capacity: <%= @user.max_cap %></li>
-        <li>Number of kids: <%= @user.number_of_kids %></li>
-        <li>Year of birth: <%= @user.year_of_birth%></li>
-      </ul>
 
-      <div class="show-card__info">
-        <i class="fas fa-star"></i> 
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-      </div> 
+      <div class="show-card">
+        <%= cl_image_tag @user.photo.key, class:"avatar-very-large", crop: :fill %>
+        <ul>
+          <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
+          <li>Price: <%= @user.price %> €/h</li>
+          <li>Max. capacity: <%= @user.max_cap %></li>
+          <li>Number of kids: <%= @user.number_of_kids %></li>
+          <li>Year of birth: <%= @user.year_of_birth%></li>
+        </ul>
+
+        <div class="show-card__info">
+          <i class="fas fa-star"></i> 
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div> 
+      </div>
     </div>
   </div>
-
+  
   <div id="calendar">
-
   </div>
+    
 </div>
