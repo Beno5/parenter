@@ -1,0 +1,37 @@
+.overview-box {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  height: 600px;
+  margin: 5px;
+  border-radius: 5%;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+
+  .nanny-overview-text {
+    color: #222;
+    font-size: large;
+    margin: 10px;
+  }
+
+  
+}
+ .circle {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
+
+.avatar-very-large1 {
+  width: 200px;
+  border-radius: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
