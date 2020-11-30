@@ -9,14 +9,14 @@ class UsersController < ApplicationController
       @current_user_marker = {
         lat: @current_user_geocoded[0],
         lng: @current_user_geocoded[1],
-        image_url: helpers.asset_url('current_user_mapmarker.png')
+        image_url: current_user.photo.key
       }
       @markers = @users.geocoded.map do |user|
         {
           lat: user.latitude,
           lng: user.longitude,
           infoWindow: render_to_string(partial: "info_window", locals: { user: user }),
-          image_url: helpers.asset_url('user_mapmarker.png')
+          image_url: user.photo.key
         }
       end
       @markers << @current_user_marker

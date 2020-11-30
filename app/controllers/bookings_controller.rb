@@ -3,8 +3,6 @@ class BookingsController < ApplicationController
 
   def show
     @message = Message.new
-   @chatroom = Chatroom.create(name: @booking.id)
-
   end
 
   def new

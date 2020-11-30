@@ -13,7 +13,7 @@
     <% @users.each do |user| %>
     <%= link_to user_path(user), class:"hover-delete" do %>
       <div class="card-product">
-        <%= cl_image_tag user.photo.key, class:"card-product", crop: :fill %>
+        <%= cl_image_tag user.photo.key,height: 300, width: 300, class:"card-product", crop: :fill %>
         <div class="card-product-infos">
           <h2><%= user.first_name %></h2>
           <h5 class= "right">€<%= user.price %></h5>
