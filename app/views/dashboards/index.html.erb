@@ -1,9 +1,9 @@
 <div class="container">
   <h1>Dashboards</h1>
 
-<div class="bookings"> 
+<div class="booking"> 
   <% @bookings.each do |booking| %>
-  <div class="booking">
+  <div class="bookings">
   <% if current_user == booking.parent %>
     <div class="nanny-card">
     <%= link_to user_path(booking.nanny), class:"hover-delete" do %>
@@ -15,7 +15,12 @@
                 <p>Rating</p>
               </div>
           </div>
-    <% end %>
+          
+    <% end %> 
+      <div class= "booking__btns">
+      <a class="btn-primary">Edit</a>
+      <a class="btn-primary">Delete</a>
+    </div>
     </div>
     <% elsif current_user == booking.nanny %>
     <div class="parent-card">
@@ -34,9 +39,6 @@
     <% end %>
   </div>
   <% end %>
-    <div class= "booking__btns">
-      <a class="btn-primary">Edit</a>
-      <a class="btn-primary">Delete</a>
-    </div>
+   
   </div>
 </div>
