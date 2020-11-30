@@ -15,10 +15,22 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
+   
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      new mapboxgl.Marker()
+      const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+      const element = document.createElement('div');
+      element.className = 'avatar';
+      element.style.backgroundPosition = "center";
+      element.style.backgroundRepeat = "no-repeat";
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+      element.style.backgroundSize = 'contain';
+      element.style.width = '40px';
+      element.style.height = '40px';
+
+      new mapboxgl.Marker(element)
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(popup)
         .addTo(map);
     });
     fitMapToMarkers(map, markers);
