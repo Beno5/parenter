@@ -2,6 +2,9 @@ class BookingsController < ApplicationController
   before_action :find_booking_index, only: %i[show edit update destroy]
 
   def show
+    @message = Message.new
+   @chatroom = Chatroom.create(name: @booking.id)
+
   end
 
   def new
