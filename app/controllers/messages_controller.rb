@@ -5,9 +5,10 @@ class MessagesController < ApplicationController
   
     @message.booking = @booking
     @message.user = current_user
+    
     if @message.save
       # Broadcast to all subscribers!
-      ChatroomChannel.broadcast_to(
+      BookingChannel.broadcast_to(
         @booking,
         render_to_string(partial: "message", locals: { message: @message })
       )
