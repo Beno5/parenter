@@ -1,5 +1,7 @@
-<div class="container-fluid">
+
+ <div class="margin-left-show">
  <%= link_to "Go back", :back, class: "btn btn-secondary" %>
+ </div>
  <br>
  <br>
  <div class="row">
@@ -45,10 +47,11 @@
         <% end %>
       </div> 
     </div>
-    <div class="column ">
-    <div id="calendar" data-agenda="<%= @schedule %>" >    
+    <div class="column">
+      <div id="calendar" data-agenda="<%= @schedule %>" >    
     </div>
   </div>
-</div>
+  </div>
+
 
 <%#= javascript_pack_tag 'init_calendar', 'data-turbolinks-track': 'reload', defer: true %>

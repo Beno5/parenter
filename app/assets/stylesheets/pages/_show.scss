@@ -81,3 +81,14 @@ ul2 {
   margin-left: 30px;
   margin-right: 30px;
  }
+
+ .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 50px;
+  margin-left: 50px;
+}
+
+.margin-left-show {
+  margin-left: 50px;
+}
