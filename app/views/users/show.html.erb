@@ -1,8 +1,8 @@
 <div class="show-book-card">
   <div class="book-card">
     <%= simple_form_for @booking do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
+      <%= f.input :start_date, as: :string, required: true, input_html:{class: "datepicker"} %>
+      <%= f.input :end_date, as: :string, required: true, input_html:{class: "datepicker"} %>
       <%= f.input :nanny_id, as: :hidden, input_html: {value: params[:id]} %>
       <%= f.submit "BOOK", class: "btn btn-primary" %>
     <% end %>
@@ -15,7 +15,7 @@
         <li>Price: <%= @user.price %> €/h</li>
         <li>Max. capacity: <%= @user.max_cap %></li>
         <li>Number of kids: <%= @user.number_of_kids %></li>
-        <li>Year of birth: <%= @user.year_of_birth%></li>
+        <li>Age: <%= Date.today.year - @user.year_of_birth%> years</li>
       </ul>
 
       <div class="show-card__info">
@@ -29,9 +29,9 @@
     </div>
   </div>
   
-  <div id="calendar" data-truc="<%= @schedule %>" >
+  <div id="calendar" data-agenda="<%= @schedule %>" >
   </div>
     
 </div>
 
-<%= javascript_pack_tag 'init_calendar', 'data-turbolinks-track': 'reload', defer: true %>
+<%#= javascript_pack_tag 'init_calendar', 'data-turbolinks-track': 'reload', defer: true %>
