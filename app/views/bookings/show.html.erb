@@ -1,2 +1,21 @@
-<h1>Bookings#show</h1>
-<p>Find me in app/views/bookings/show.html.erb</p>
+
+<div class="row">
+  <div class="col overview-box">
+    <h1><strong>Booking Overview</strong></h1>
+
+    <div class="circle">
+    <%= cl_image_tag @booking.nanny.photo.key, class:"avatar-very-large1" %>
+    </div>
+
+    <div class="nanny-overview-text">
+      <div ><strong>Name: </strong> <%= @booking.nanny.first_name %> <%= @booking.nanny.last_name %></div>
+      <div><strong>Price: </strong> <%= @booking.nanny.price %> €/h</div>
+      <div><strong>Year of Birth: </strong> <%= @booking.nanny.year_of_birth%></div>
+    </div>
+    
+  </div>
+  <div class="col overview-box">
+    <h1><strong>Live Chat</strong></h1>
+  </div>
+</div>
+

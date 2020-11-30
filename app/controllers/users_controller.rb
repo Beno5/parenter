@@ -23,6 +23,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @schedule = "Evenement en preparation"
+    # @schedule = nanny_user.bookings
+    @booking = Booking.new
+    @parent = current_user
+
   end
 
   private

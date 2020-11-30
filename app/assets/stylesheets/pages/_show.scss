@@ -1,0 +1,14 @@
+ul {
+  list-style-type: none;
+  border: 1px solid #454E57;
+  border-radius: 5px;
+  padding: 12px 20px;
+}
+
+.show-page {
+  display: flex;
+  .show-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
