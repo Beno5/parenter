@@ -63,8 +63,6 @@
 .show-book-card {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-around;
 }
 
 .show-card {
@@ -72,11 +70,16 @@
   height: 400px;
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-around;
+  position: relative;
+  flex-grow: 1;
 }
 
 .show-card__info i {
   color: #fdb434;
 }
-
+.show-card__info {
+position: absolute;
+bottom: 25%;
+left: 11%;
+}
