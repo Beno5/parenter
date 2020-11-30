@@ -16,9 +16,6 @@
             <i class="fas fa-star fa-lg"></i>
             <i class="fas fa-star fa-lg"></i>
           </div> 
-          <div class="bio">
-            <h2>Bio</h2>  
-          </div>
 
           <ul class="details-list">
             <li class="large-font-show"><strong><%= @user.first_name %> <%= @user.last_name %></strong></li>
@@ -28,7 +25,14 @@
             <li><strong>Age: <%= Date.today.year - @user.year_of_birth%> years</li>
           </ul>
         </div>
-        
+        <div class="bio">
+            <h2>Bio</h2>
+            <%= @user.bio %>
+          </div>
+        <div class="review">
+          <h2>Reviews</h2>
+            
+        </div>
       </div>
     </div>
     <div class="column" style="margin-left: auto;">
@@ -42,11 +46,11 @@
       </div>   
     </div>
   </div>
-
   
   <div id="calendar" data-agenda="<%= @schedule %>" >
   </div>
     
+
 </div>
 
 <%#= javascript_pack_tag 'init_calendar', 'data-turbolinks-track': 'reload', defer: true %>

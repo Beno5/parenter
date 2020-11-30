@@ -68,7 +68,7 @@
 
 .show-card {
   width: 500px;
-  height: 400px;
+  height: 320px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -81,6 +81,6 @@
 }
 .show-card__info {
 position: absolute;
-bottom: 25%;
+bottom: 5%;
 left: 11%;
 }
