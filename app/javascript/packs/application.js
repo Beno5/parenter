@@ -26,7 +26,8 @@ require("channels")
 import "bootstrap";
 import { calendar, initCalendar } from "./init_calendar";
 import { initMapbox } from '../plugins/init_mapbox';
-import { initChatroomCable } from '../channels/chatroom_channel';
+// import { initChatroomCable } from '../channels/chatroom_channel';
+import { initBookingCable } from '../channels/booking_channel';
 import flatpickr from 'flatpickr'
 
 
@@ -35,7 +36,7 @@ import flatpickr from 'flatpickr'
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
-  initChatroomCable();
+  initBookingCable();
   initCalendar();
   setTimeout(() => calendar && calendar.updateSize(), 200);
   flatpickr(".datepicker", {
