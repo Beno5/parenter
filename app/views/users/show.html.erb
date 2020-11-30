@@ -1,41 +1,50 @@
 <div class="container">
  <%= link_to "Go back", :back, class: "btn btn-secondary" %>
-<div class="show-book-card">
-<div class="conainer card-show-2">
-    <div class="show-card">
-      <%= cl_image_tag @user.photo.key, class:"avatar-very-large", width: 300, height: 300, crop: :fill %>
-      <ul class="details-list">
-        <li>Name: <%= @user.first_name %> <%= @user.last_name %></li>
-        <li>Price: <%= @user.price %> €/h</li>
-        <li>Address: <%= @user.address %></li>
-        <li>Max. capacity: <%= @user.max_cap %></li>
-        <li>Year of birth: <%= @user.year_of_birth%></li>
-      </ul>
-
-      <div class="show-card__info">
-        <i class="fas fa-star"></i> 
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-      </div> 
-
+ <br>
+ <br>
+ <div class="row">
+    <div class="show-book-card">
+      <div class="column">
+        <div class="show-card">
+          <div class="circle-show-page">
+            <%= cl_image_tag @user.photo.key, class:"avatar-very-large1", width: 300, height: 300, crop: :fill %>
+          </div>
+          <div class="show-card__info">
+            <i class="fas fa-star fa-lg"></i> 
+            <i class="fas fa-star fa-lg"></i>
+            <i class="fas fa-star fa-lg"></i>
+            <i class="fas fa-star fa-lg"></i>
+            <i class="fas fa-star fa-lg"></i>
+          </div> 
+          <div class="bio">
+            <h2>Bio</h2>
+            
+          </div>
+          <ul class="details-list">
+            <li class="large-font-show"><strong><%= @user.first_name %> <%= @user.last_name %></strong></li>
+            <li><strong>Price: </strong><%= @user.price %> €/h</li>
+            <li><strong>Address: </strong><%= @user.address %></li>
+            <li><strong>Max. capacity: </strong><%= @user.max_cap %></li>
+            <li><strong>Year of birth: </strong><%= @user.year_of_birth%></li>
+          </ul>
+        </div>
+        
+      </div>
     </div>
-      <div class="book-card">
-    <%= simple_form_for @booking do |f| %>
-      <%= f.input :start_date %>
-      <%= f.input :end_date %>
-      <%= f.input :nanny_id, as: :hidden, input_html: {value: params[:id]} %>
-      <%= f.submit "BOOK", class: "btn btn-primary" %>
-    <% end %>
+    <div class="column" style="margin-left: auto;">
+      <div id="calendar">
+      </div>
+      <div class= "float-right">
+      <%= simple_form_for @booking do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.input :nanny_id, as: :hidden, input_html: {value: params[:id]} %>
+        <%= f.submit "BOOK", class: "btn btn-primary" %>
+      <% end %>
+      </div>   
+    </div>
   </div>
-  </div>
+
   
-  <div id="calendar">
-  </div>
-    
-
-</div>
-
 
 </div>
