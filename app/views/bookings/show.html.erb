@@ -1,21 +1,28 @@
 
-<div class="row">
-  <div class="col overview-box">
-    <h1><strong>Booking Overview</strong></h1>
+<div class="container show-page-container">
+  <div class="row">
+    <div class="col overview-box">
+      <h1><strong>Booking Overview</strong></h1>
 
-    <div class="circle">
-    <%= cl_image_tag @booking.nanny.photo.key, class:"avatar-very-large1" %>
-    </div>
+      <div class="circle">
+      <%= cl_image_tag @booking.nanny.photo.key, class:"avatar-very-large1" %>
+      </div>
 
-    <div class="nanny-overview-text">
-      <div ><strong>Name: </strong> <%= @booking.nanny.first_name %> <%= @booking.nanny.last_name %></div>
-      <div><strong>Price: </strong> <%= @booking.nanny.price %> €/h</div>
-      <div><strong>Year of Birth: </strong> <%= @booking.nanny.year_of_birth%></div>
+      <div class="nanny-overview-text">
+        <div ><strong>Name: </strong> <%= @booking.nanny.first_name %> <%= @booking.nanny.last_name %></div>
+        <div><strong>Price: </strong> <%= @booking.nanny.price %> €/h</div>
+        <div><strong>Year of Birth: </strong> <%= @booking.nanny.year_of_birth%></div>
+        <div><strong>Start Date: </strong> <%=@booking.start_date %></div>
+        <div><strong>End Date: </strong> <%=@booking.end_date %></div>
+        
+      </div>
+
+      <a class="btn btn-primary position-absolute-bottom" href="/dashboards">FINALIZE BOOKING</a>
+      
     </div>
-    
-  </div>
-  <div class="col overview-box">
-    <h1><strong>Live Chat</strong></h1>
+    <div class="col overview-box">
+      <h1><strong>Live Chat</strong></h1>
+      <%= render 'chatrooms/show' %>
+    </div>
   </div>
 </div>
-

@@ -7,20 +7,21 @@
 }
 .circle {
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 250px;
+  width: 250px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   display: inline-block;
+  margin: 20px;
  }
  .overview-box {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  height: 885px;
+  height: 650px;
   margin: 10px;
   text-align: center;
   border-radius: 20px;
+  padding-top: 20px;
+  background-color: white;
  }
-
- //...

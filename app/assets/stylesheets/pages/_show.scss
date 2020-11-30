@@ -1,8 +1,12 @@
-ul {
+.details-list {
   list-style-type: none;
   border: 1px solid #454E57;
   border-radius: 5px;
   padding: 12px 20px;
+  width: 40%;
+  position: absolute;
+  right: 0px;
+  bottom: 35%;
 }
 
 .show-page {
@@ -12,3 +16,57 @@ ul {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+
+ul2 {
+  list-style-type: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+}
+.show-page-container {
+  margin-bottom: 20px;
+}
+.show-container-left {
+  position: relative;
+}
+.circle-show-page {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  margin: 20px;
+  margin-left: 0px;
+  position: absolute;
+  left: 0px;
+ }
+
+ .large-font-show {
+  font-size: 25px;
+  text-align: center;
+ }
+
+ .float-right {
+  max-width: 550px;
+  max-height: 600px;
+  margin: 40px auto;
+  margin-right: 0;
+ }
+
+ .float-left {
+  float: left;
+  width: 50%;
+ }
+
+ .bio {
+  position: absolute;
+  bottom: 5%;
+ }
+
+ .reviews {
+   text-align: center;
+   margin-top: 100px;
+ }
