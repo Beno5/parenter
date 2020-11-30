@@ -24,9 +24,11 @@ require("channels")
 
 // External imports
 import "bootstrap";
-import { initCalendar } from "../plugins/init_calendar";
+import { calendar, initCalendar } from "./init_calendar";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initChatroomCable } from '../channels/chatroom_channel';
+import flatpickr from 'flatpickr'
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -35,5 +37,17 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initChatroomCable();
   initCalendar();
+  setTimeout(() => calendar && calendar.updateSize(), 200);
+  flatpickr(".datepicker", {
+    minDate: "today",
+    enableTime: true,
+    time_24hr: true,
+    dateFormat: "Y-m-d H:i",
+    minuteIncrement: 15,
+    defaultDate: new Date().fp_incr(2),
+    defaultHour: 11,
+    // defaultMinute: 00,
+  });
+
 })
 

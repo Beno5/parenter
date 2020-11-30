@@ -26,7 +26,26 @@
   background-color: white;
  }
 
+
 .message-container p {
   margin-top: 10px;
   color: black;
 }
+
+ .bookings {
+   display: flex;
+   flex-direction: row;
+   background-color: lightgrey;
+   border-radius: 5px;
+   max-width: 700px;
+   padding: 15px;
+ }
+
+ .booking__btns {
+   margin: 50px 0px 0px 25%;
+ }
+
+ .booking__btns a {
+   margin: 0px 10px;
+ }
+

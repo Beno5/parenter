@@ -12,8 +12,10 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/show";
+@import "pages/booking-overview";
 
 @import 'mapbox-gl/dist/mapbox-gl';
+@import "flatpickr/dist/flatpickr";
 
 /* ----------------------
 primary color: #EC4369
