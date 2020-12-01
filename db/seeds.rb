@@ -278,5 +278,9 @@ puts 'Creating fake users...'
   booking5 = Booking.create(nanny: sarah, parent: michael, start_date: "Thu, 26 Nov 2020 12:06:13 UTC +00:00", end_date: "Thu, 26 Nov 2020 15:16:13 UTC +00:00", status: "pending")
 
   review5 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 5)
+  review3 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 4)
+  review2 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 3)
+  review1 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 5)
+  review4 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 5)
 puts 'Finished!'
 
