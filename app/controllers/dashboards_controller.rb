@@ -3,4 +3,6 @@ class DashboardsController < ApplicationController
    
     @bookings = Booking.all
   end
+
+  
 end
