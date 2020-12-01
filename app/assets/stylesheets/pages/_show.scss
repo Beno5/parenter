@@ -42,13 +42,17 @@ ul2 {
 }
 .circle-show-page {
   border-radius: 50%;
-  height: 50px;
-  width: 50px;
+  height: 250px;
+  width: 250px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   display: inline-block;
+  margin: 20px;
+  margin-left: 0px;
+  position: absolute;
+  left: 0px;
  }
 
  .large-font-show {
@@ -86,8 +90,7 @@ ul2 {
 
  .date-picker-column {
   margin-left: 20px;
-  margin-right: 30px;
-  text-align: center;
+  margin-right: 20px;
  }
 
  .row {
