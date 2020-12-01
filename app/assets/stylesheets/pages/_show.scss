@@ -89,7 +89,7 @@ ul2 {
  }
 
  .date-picker-column {
-  margin-left: 20px;
+  margin-left: 120px;
   margin-right: 20px;
  }
 
@@ -104,3 +104,16 @@ ul2 {
   margin-left: 50px;
 }
 
+.new_booking {
+  display: flex;
+}
+
+.form-group {
+  margin-left: 1rem;
+}
+
+.btn-show {
+  max-height: 40px;
+    /* display: flex; */
+  margin-top: 31px;
+}
