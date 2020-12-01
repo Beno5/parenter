@@ -1,7 +1,6 @@
 class BookingChannel < ApplicationCable::Channel
   def subscribed
-    raise
-    @booking = Booking.find(params[:booking_id])
+    booking = Booking.find(params[:id])
     stream_for booking
   end
 
