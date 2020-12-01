@@ -33,7 +33,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @schedule = Booking.where(nanny_id: params[:id]).map {|booking| {title: "Occupied", start: booking.start_date.iso8601, end: booking.end_date.iso8601 } }.to_json
+    bookings = Booking.where(nanny: @user)
+    role = @user == current_user ? :nanny : :visitor
+    @schedule = helpers.events_hash(bookings, role)
     @booking = Booking.new
     @parent = current_user
 

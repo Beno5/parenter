@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_booking_index, only: %i[show edit update destroy]
+  before_action :find_booking_index, only: %i[show edit update destroy approve decline]
 
   def show
     @message = Message.new
@@ -15,6 +15,7 @@ class BookingsController < ApplicationController
     @user_nanny = User.find(params[:booking][:nanny_id])
     @booking = Booking.new(booking_params)
     @booking.parent = current_user
+    @booking.status = "pending"
 
     if @booking.save!
       redirect_to booking_path(@booking)
@@ -38,6 +39,19 @@ class BookingsController < ApplicationController
   def destroy
     @booking.destroy
   end
+
+  def approve
+    @booking.status = "confirmed"
+    @booking.save!
+    redirect_to dashboards_path
+  end
+
+  def decline
+    @booking.status = "declined"
+    destroy
+    redirect_to dashboards_path
+  end
+
 
   private
 

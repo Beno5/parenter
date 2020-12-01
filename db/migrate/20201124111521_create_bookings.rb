@@ -5,7 +5,6 @@ class CreateBookings < ActiveRecord::Migration[6.0]
       t.datetime :end_date
       t.integer :parent_id
       t.integer :nanny_id
-
       t.timestamps
     end
   end
