@@ -38,6 +38,7 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
+    redirect_to dashboards_path
   end
 
   def approve
