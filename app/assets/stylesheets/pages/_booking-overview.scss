@@ -27,6 +27,7 @@
 }
 
  .bookings {
+   position: relative;
    display: flex;
    flex-direction: row;
    background-color: lightgrey;
@@ -52,3 +53,27 @@
 .style-margin {
   margin-top: 50px;
 }
+
+.parent-card {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-accept-decline {
+  margin-top: 50px;
+  margin-right: 40px;
+}
+
+.x-button {
+  position: absolute;
+    right: 1%;
+    font-size: 25px;
+}
+
+.check-mark {
+  color: #EC4369;
+}
+
+
+

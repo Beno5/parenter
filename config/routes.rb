@@ -15,3 +15,5 @@ end
   resources :reviews, only: [:new, :create, :destroy]
   resources :dashboards, only: [:index, :show]
 end
+
+
