@@ -34,8 +34,6 @@ class UsersController < ApplicationController
 
   def show
     @schedule = Booking.where(nanny_id: params[:id]).map {|booking| {title: "Occupied", start: booking.start_date.iso8601, end: booking.end_date.iso8601 } }.to_json
-    # start: '2020-11-26T12:00:00',
-    # end: '2020-11-26T23:30:00',
     @booking = Booking.new
     @parent = current_user
 
