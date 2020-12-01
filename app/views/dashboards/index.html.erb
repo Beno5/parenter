@@ -7,6 +7,7 @@
   <div class="booking"> 
     <% @bookings.each do |booking| %>
       <div class="bookings">
+        <%= link_to '', booking_path(booking), class: "far fa-times-circle text-danger x-button hover-delete", method: :delete, data: { confirm: "Are you sure?" } %>
         <% if current_user == booking.parent %>
           <div class="nanny-card">
             <%= link_to user_path(booking.nanny), class:"hover-delete" do %>
@@ -25,11 +26,12 @@
             <h5 class="status">Status: Pending</h5>
             
             <% elsif booking.status == "confirmed" %>
-            <h5 class="status">Status: Confirmed<h5>
+            <h5 class="status">Status: Confirmed</h5>
             <% end %>
             <div class="buttons-dashboard-parent">
-              <%= link_to 'cancel booking', booking_path(booking), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
+             <h5> <%= link_to 'cancel booking', booking_path(booking), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
               <%= link_to "show booking", booking_path(booking), class: "btn btn-secondary" %>
+              </h5>
               </div>
             </div>
 
@@ -40,17 +42,32 @@
               <%= cl_image_tag booking.parent.photo.key, class:"card-product", crop: :fill %>
               <div class="card-product-infos">
                 <h2><%= booking.parent.first_name %></h2>
+                <br>
+                <h2>Children: <%= booking.parent.number_of_kids %></h2>
               </div>
               <div class="buttons-accept-decline">
               <% if booking.status == "pending" %>
-                <%= link_to "accept", approve_booking_path(booking), method: :post, class: "btn btn-success mx-2" %>
-                <%= link_to "decline", decline_booking_path(booking), method: :post, class: "btn btn-danger mx-2" %>
+               
             <% else %>
             <% end %>
             </div>
             
             </div>
-              <%= link_to 'cancel booking', booking_path(booking), class: "btn btn-flat", method: :delete, data: { confirm: "Are you sure?" } %>
+            
+            <% if booking.status == "pending" %>
+            <div class="buttons-accept-decline">
+              <%= link_to "accept", approve_booking_path(booking), method: :post, class: "btn btn-primary m-0" %>
+                <%= link_to "decline", decline_booking_path(booking), method: :post, class: "btn btn-secondary m-0" %>
+                </div>  
+                <% else %>
+                 <div class="buttons-accept-decline">
+                <h5 class="status">Status: Confirmed <i class="fas fa-check check-mark"></i><h5>
+                </div>
+            <% end %>
+             
+             
+            
+             
 
           </div>
           
