@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light custom_nav_color">
   <%= link_to root_path, class: "navbar-brand", style: "max-width:100px; margin-top: -7px;" do %>
-    <%= image_tag "Parenter Logo 1.png"%>
+    <%= image_tag "Parenter-logo-2.png"%>
   <% end %>
   <% if user_signed_in? %>
     <ul class="navbar-nav">
@@ -16,8 +16,8 @@
       </li>
     </ul>
   <div class="nav-item dropdown center-alignment">
-    <div class="circle-navbar">
-      <%= cl_image_tag current_user.photo.key, class: "avatar-very-large1 dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+    <div class="circle-navbar dropdown-toggle", id= "navbarDropdown", data-toggle= "dropdown" , aria-haspopup= true, aria-expanded= false>
+        <%= cl_image_tag current_user.photo.key, class: "avatar-very-large1 " %>
     </div>
   </div>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
