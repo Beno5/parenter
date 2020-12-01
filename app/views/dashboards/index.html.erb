@@ -1,44 +1,44 @@
 <div class="container">
   <h1>Dashboards</h1>
 
-<div class="booking"> 
-  <% @bookings.each do |booking| %>
-  <div class="bookings">
-  <% if current_user == booking.parent %>
-    <div class="nanny-card">
-    <%= link_to user_path(booking.nanny), class:"hover-delete" do %>
-          <div class="card-product">
-            <%= cl_image_tag booking.nanny.photo.key, class:"card-product", crop: :fill %>
-              <div class="card-product-infos">
-                <h2><%= booking.nanny.first_name %></h2>
-                <h5 class= "right">€<%= booking.nanny.price %></h5>
-                <p>Rating</p>
+  <div class="booking"> 
+    <% @bookings.each do |booking| %>
+      <div class="bookings">
+        <% if current_user == booking.parent %>
+          <div class="nanny-card">
+            <%= link_to user_path(booking.nanny), class:"hover-delete" do %>
+              <div class="card-product">
+                <%= cl_image_tag booking.nanny.photo.key, class:"card-product", crop: :fill %>
+                <div class="card-product-infos">
+                  <h2><%= booking.nanny.first_name %></h2>
+                  <h5 class= "right">€<%= booking.nanny.price %></h5>
+                  <p>Rating</p>
+                </div>
               </div>
+            <% end %> 
+            <div class= "booking__btns">
+            <a class="btn-primary">Edit</a>
+            <a class="btn-primary">Delete</a>
+            </div>
           </div>
-          
-    <% end %> 
-      <div class= "booking__btns">
-      <a class="btn-primary">Edit</a>
-      <a class="btn-primary">Delete</a>
-    </div>
-    </div>
-    <% elsif current_user == booking.nanny %>
-    <div class="parent-card">
-    
-          <div class="card-product">
-            <%= cl_image_tag booking.parent.photo.key, class:"card-product", crop: :fill %>
+        <% elsif current_user == booking.nanny %>
+          <div class="parent-card">
+            <div class="card-product">
+              <%= cl_image_tag booking.parent.photo.key, class:"card-product", crop: :fill %>
               <div class="card-product-infos">
                 <h2><%= booking.parent.first_name %></h2>
               </div>
+            </div>
           </div>
-    </div>
-      <%= booking.parent.first_name %> <%= booking.parent.last_name %>
-      <%= booking.parent.number_of_kids %>
-      <%= booking.start_date %>
-      <%= booking.end_date %>
+            <%= booking.parent.first_name %> <%= booking.parent.last_name %>
+            <%= booking.parent.number_of_kids %>
+            <%= booking.start_date %>
+            <%= booking.end_date %>
+        <% end %>
+      </div>
     <% end %>
   </div>
-  <% end %>
-   
+
+  <div id="calendar" data-agenda="<%= @schedule %>" >    
   </div>
 </div>
