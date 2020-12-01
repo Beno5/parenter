@@ -32,4 +32,23 @@ typeface color: #454E57
 .container-custom {
   margin-right: 50px;
   margin-left: 50px;
+  min-height: 100vh;
+}
+
+.edit-profile-div {
+  min-height: 100vh;
+    /* margin-left: 50px; */
+    /* margin-right: 50px; */
+    position: absolute;
+    left: 5%;
+    width: 361px;
+}
+.overview-box1 {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  height: 725px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 20px;
+  padding-top: 20px;
+  background-color: white;
 }
