@@ -1,5 +1,8 @@
-<div class="container">
-  <h1>Dashboards</h1>
+<div class="margin-left-show">
+ <%= link_to "Go back", :back, class: "btn btn-secondary" %>
+ </div>
+<div class="container-custom d-flex style-margin">
+
 
   <div class="booking"> 
     <% @bookings.each do |booking| %>
@@ -19,14 +22,15 @@
 
             <div class= "booking__btns">
             <%if booking.status == "pending" %>
-            <h5>pending</h5>
+            <h5 class="status">Status: Pending</h5>
+            
             <% elsif booking.status == "confirmed" %>
-            <h5>confirmed<h5>
+            <h5 class="status">Status: Confirmed<h5>
             <% end %>
+            <div class="buttons-dashboard-parent">
               <%= link_to 'cancel booking', booking_path(booking), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
               <%= link_to "show booking", booking_path(booking), class: "btn btn-secondary" %>
-            <a class="btn-primary">Edit</a>
-            <a class="btn-primary">Delete</a>
+              </div>
             </div>
 
           </div>
@@ -58,8 +62,7 @@
       </div>
     <% end %>
   </div>
-
-  <div id="calendar" data-agenda="<%= @schedule %>" >    
+  <div id="calendar" class= "custom-calendar" data-agenda="<%= @schedule %>" >    
   </div>
 </div>
 
