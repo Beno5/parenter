@@ -16,10 +16,6 @@
                 </div>
               </div>
             <% end %> 
-            <div class= "booking__btns">
-            <a class="btn-primary">Edit</a>
-            <a class="btn-primary">Delete</a>
-            </div>
           </div>
         <% elsif current_user == booking.nanny %>
           <div class="parent-card">
@@ -35,6 +31,10 @@
             <%= booking.start_date %>
             <%= booking.end_date %>
         <% end %>
+        <div class= "booking__btns">
+          <a class="btn-primary">Edit</a>
+          <a class="btn-primary">Delete</a>
+        </div>
       </div>
     <% end %>
   </div>
