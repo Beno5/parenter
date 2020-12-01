@@ -4,6 +4,9 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 let calendar;
 const initCalendar = () => {
   const calendarEl = document.getElementById('calendar');
+  if (!calendarEl) {
+    return
+  }
   const agenda = JSON.parse(calendarEl.dataset.agenda);
   // console.log(agenda);
   // console.log(typeof(agenda));
