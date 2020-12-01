@@ -1,5 +1,5 @@
 <div class="navbar navbar-expand-sm navbar-light custom_nav_color">
-  <%= link_to root_path, class: "navbar-brand" do %>
+  <%= link_to root_path, class: "navbar-brand", style: "max-width:100px; margin-top: -7px;" do %>
     <%= image_tag "Parenter Logo 1.png"%>
   <% end %>
   <% if user_signed_in? %>
@@ -18,6 +18,7 @@
       </li>
     </ul>
     <div class="nav-item dropdown center-alignment">
+    
       <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
       <div>
         <%= current_user.first_name %>

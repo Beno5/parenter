@@ -40,3 +40,15 @@
   justify-content: center;
   border: none;
 }
+
+.circle-navbar {
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  margin: 0;
+ }

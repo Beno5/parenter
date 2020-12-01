@@ -1,12 +1,23 @@
 .details-list {
   list-style-type: none;
-  border: 1px solid #454E57;
-  border-radius: 5px;
+  /* border: 1px solid #454E57; */
+  /* border-radius: 5px; */
   padding: 12px 20px;
-  width: 40%;
+  width: 50%;
   position: absolute;
   right: 0px;
-  bottom: 55px;
+  bottom: 64px;
+}
+
+.details-list1 {
+  list-style-type: none;
+  /* border: 1px solid #454E57; */
+  /* border-radius: 5px; */
+  padding: 12px 20px;
+  width: 50%;
+  position: absolute;
+  right: 0px;
+  top:0;
 }
 
 .show-page {
@@ -78,8 +89,8 @@ ul2 {
  }
 
  .date-picker-column {
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
  }
 
  .row {
