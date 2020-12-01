@@ -15,6 +15,8 @@
 }
 
 .custom_nav_color {
+  position: fixed;
+  width: -webkit-fill-available;
   display: flex;
   justify-content: space-between;
   background: none;
@@ -52,3 +54,21 @@
   display: inline-block;
   margin: 0;
  }
+
+ .nav-link-custom {
+   color: white;
+   text-decoration: none;
+   margin: 50px;
+   }
+
+   .nav-link-custom:hover{
+     text-decoration: none;
+     color: white;
+     font-weight: bolder;
+     
+   }
+
+   .nav-link {
+     margin-left: 50px;
+     margin-right: 50px;
+   }
