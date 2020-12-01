@@ -21,7 +21,7 @@
 
           <ul class="details-list">
             <li class="large-font-show"><strong><%= @user.first_name %> <%= @user.last_name %></strong></li>
-            <li><strong>Price: </strong><%= @user.price %> €/h</li>
+            <li><strong>Price: </strong><%= @user.price %> €/hour</li>
             <li><strong>Address: </strong><%= @user.address %></li>
             <li><strong>Max. capacity: </strong><%= @user.max_cap %></li>
             <li><strong>Age: </strong><%= Date.today.year - @user.year_of_birth%> years</li>
@@ -41,8 +41,11 @@
     <div class= "margin-show">
       <h2><strong>Book Now!</strong></h2>
         <%= simple_form_for @booking do |f| %>
-          <%= f.input :start_date, as: :string, required: true, input_html:{class: "datepicker"} %>
-          <%= f.input :end_date, as: :string, required: true, input_html:{class: "datepicker"} %>
+          <% placedate = Date.tomorrow %>
+          <%  placestartdate = DateTime.new(placedate.year, placedate.month, placedate.day).change(hour: 13).strftime("%Y-%m-%d %H:%M") %>
+          <%  placeenddate = DateTime.new(placedate.year, placedate.month, placedate.day).change(hour: 15).strftime("%Y-%m-%d %H:%M") %>
+          <%= f.input :start_date, placeholder: placestartdate.to_s, as: :string, required: true, input_html:{class: "datepicker"} %>
+          <%= f.input :end_date, placeholder: placeenddate.to_s, as: :string, required: true, input_html:{class: "datepicker"} %>
           <%= f.input :nanny_id, as: :hidden, input_html: {value: params[:id]} %>
           <%= f.submit "BOOK", class: "btn btn-primary" %>
         <% end %>

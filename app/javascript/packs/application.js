@@ -45,8 +45,7 @@ document.addEventListener('turbolinks:load', () => {
     time_24hr: true,
     dateFormat: "Y-m-d H:i",
     minuteIncrement: 15,
-    defaultDate: new Date().fp_incr(2),
-    defaultHour: 11,
+    defaultHour: 13,
     // defaultMinute: 00,
   });
 
