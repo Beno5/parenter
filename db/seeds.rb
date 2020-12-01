@@ -275,7 +275,7 @@ puts 'Creating fake users...'
   )
   darlene.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606488094/valentin-lacoste-ggAPxrb4Deg-unsplash_g4gxqo.jpg"), filename: "alice.jpg", content_type: 'image/png')
   darlene.save!
-  booking5 = Booking.create(nanny: sarah, parent: michael, start_date: "Thu, 26 Nov 2020 12:06:13 UTC +00:00", end_date: "Thu, 26 Nov 2020 15:16:13 UTC +00:00")
+  booking5 = Booking.create(nanny: sarah, parent: michael, start_date: "Thu, 26 Nov 2020 12:06:13 UTC +00:00", end_date: "Thu, 26 Nov 2020 15:16:13 UTC +00:00", status: "pending")
 
   review5 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 5)
 puts 'Finished!'
