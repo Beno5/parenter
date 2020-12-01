@@ -7,6 +7,15 @@
  <div class="row">
     <div class="show-book-card">
       <div class="column">
+       <%= simple_form_for @booking do |f| %>
+          <% placedate = Date.tomorrow %>
+          <%  placestartdate = DateTime.new(placedate.year, placedate.month, placedate.day).change(hour: 13).strftime("%Y-%m-%d %H:%M") %>
+          <%  placeenddate = DateTime.new(placedate.year, placedate.month, placedate.day).change(hour: 15).strftime("%Y-%m-%d %H:%M") %>
+          <%= f.input :start_date, placeholder: placestartdate.to_s, as: :string, required: true, input_html:{class: "datepicker"} %>
+          <%= f.input :end_date, placeholder: placeenddate.to_s, as: :string, required: true, input_html:{class: "datepicker"} %>
+          <%= f.input :nanny_id, as: :hidden, input_html: {value: params[:id]} %>
+          <%= f.submit "BOOK", class: "btn btn-primary btn-show" %>
+        <% end %>
         <div class="show-card">
           <div class="circle-show-page">
             <%= cl_image_tag @user.photo.key, class:"avatar-very-large1", width: 300, height: 300, crop: :fill %>
@@ -19,18 +28,18 @@
             <i class="fas fa-star fa-lg"></i>
           </div> 
 
-          <ul class="details-list">
+          <ul class="details-list1">
             <li class="large-font-show"><strong><%= @user.first_name %> <%= @user.last_name %></strong></li>
             <li><strong>Price: </strong><%= @user.price %> €/hour</li>
             <li><strong>Address: </strong><%= @user.address %></li>
             <li><strong>Max. capacity: </strong><%= @user.max_cap %></li>
             <li><strong>Age: </strong><%= Date.today.year - @user.year_of_birth%> years</li>
+            <li><strong>Bio: </strong><%= @user.bio %></li>
+            <div>
           </ul>
+          
         </div>
-        <div class="bio">
-          <h2>Bio</h2>
-          <%= @user.bio %>
-        </div>
+        
         <div class="review">
           <h2>Reviews</h2>
           <p>
@@ -38,20 +47,6 @@
       </div>
     </div>
     <div class="column date-picker-column">
-    <div class= "margin-show">
-      <h2><strong>Book Now!</strong></h2>
-        <%= simple_form_for @booking do |f| %>
-          <% placedate = Date.tomorrow %>
-          <%  placestartdate = DateTime.new(placedate.year, placedate.month, placedate.day).change(hour: 13).strftime("%Y-%m-%d %H:%M") %>
-          <%  placeenddate = DateTime.new(placedate.year, placedate.month, placedate.day).change(hour: 15).strftime("%Y-%m-%d %H:%M") %>
-          <%= f.input :start_date, placeholder: placestartdate.to_s, as: :string, required: true, input_html:{class: "datepicker"} %>
-          <%= f.input :end_date, placeholder: placeenddate.to_s, as: :string, required: true, input_html:{class: "datepicker"} %>
-          <%= f.input :nanny_id, as: :hidden, input_html: {value: params[:id]} %>
-          <%= f.submit "BOOK", class: "btn btn-primary" %>
-        <% end %>
-      </div> 
-    </div>
-    <div class="column">
       <div id="calendar" data-agenda="<%= @schedule %>" >    
     </div>
   </div>
