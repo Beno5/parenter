@@ -7,12 +7,17 @@ module BookingsHelper
       elsif role == :parent
         title = booking.nanny.first_name
       end
+      if title == 'Occupied'
+        color = '#F49CB0'
+      else
+        color = ['#F49CB0', '#F4B29C', '#CB9CF4', '#F49CDA'].sample
+      end
       {
         title: title,
         start: booking.start_date.iso8601,
         end: booking.end_date.iso8601,
-        backgroundColor: '#F49CB0',
-        borderColor: '#F49CB0',
+        backgroundColor: color,
+        borderColor: color,
         url: root_path
       }
     end
