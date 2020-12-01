@@ -1,3 +1,8 @@
+<div class="margin-left-show">
+ <%= link_to "Go back", :back, class: "btn btn-secondary" %>
+ </div>
+<div class="container-custom">
+  <div class="overview-box">
 <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -21,15 +26,15 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
-  </div>
-
-  <div class="form-actions">
+<div class="form-actions">
     <%= f.button :submit, "Update" %>
+    <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
   </div>
 <% end %>
+  </div>
 
-<h3>Cancel my account</h3>
+  
 
-<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+  </div>
+</div>
