@@ -16,7 +16,9 @@
       </li>
     </ul>
     <div class="nav-item dropdown center-alignment">
-      <%= cl_image_tag current_user.photo.key, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="circle-show-page">
+      <%= cl_image_tag current_user.photo.key, class: "avatar-very-large1 dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      </div>
       <div>
         <%= current_user.first_name %>
       </div>
