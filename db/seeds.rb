@@ -12,6 +12,7 @@ require 'faker'
 puts "Destroying all users"
 
 User.destroy_all
+Booking.destroy_all
 
 puts 'Creating fake users...'
 
