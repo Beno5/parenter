@@ -23,7 +23,7 @@ const initMapbox = () => {
       element.className = 'avatar';
       element.style.backgroundPosition = "center";
       element.style.backgroundRepeat = "no-repeat";
-      element.style.backgroundImage = `url('${marker.image_url}')`;
+      element.style.backgroundImage = `url('https://res.cloudinary.com/beno5/image/upload/v1606493572/${marker.image_url}.jpg')`;
       element.style.backgroundSize = 'contain';
       element.style.width = '40px';
       element.style.height = '40px';

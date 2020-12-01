@@ -1,19 +1,20 @@
 class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
-    @chatroom = Chatroom.find(params[@chatroom.id])
+    @booking = Booking.find(params[:booking_id])
   
-    @message.chatroom = @chatroom
+    @message.booking = @booking
     @message.user = current_user
+    
     if @message.save
       # Broadcast to all subscribers!
-      ChatroomChannel.broadcast_to(
-        @chatroom,
+      BookingChannel.broadcast_to(
+        @booking,
         render_to_string(partial: "message", locals: { message: @message })
       )
-      redirect_to chatroom_path(@chatroom, anchor: "message-#{@message.id}")
+      redirect_to booking_path(@booking, anchor: "message-#{@message.id}")
     else
-      render 'chatrooms/show'
+      render 'bookings/show'
     end
   end
 

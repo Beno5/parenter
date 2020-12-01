@@ -1,5 +1,7 @@
-<div class="container">
+
+ <div class="margin-left-show">
  <%= link_to "Go back", :back, class: "btn btn-secondary" %>
+ </div>
  <br>
  <br>
  <div class="row">
@@ -16,9 +18,6 @@
             <i class="fas fa-star fa-lg"></i>
             <i class="fas fa-star fa-lg"></i>
           </div> 
-          <div class="bio">
-            <h2>Bio</h2>  
-          </div>
 
           <ul class="details-list">
             <li class="large-font-show"><strong><%= @user.first_name %> <%= @user.last_name %></strong></li>
@@ -28,11 +27,18 @@
             <li><strong>Age: </strong><%= Date.today.year - @user.year_of_birth%> years</li>
           </ul>
         </div>
-        
+        <div class="bio">
+          <h2>Bio</h2>
+          <%= @user.bio %>
+        </div>
+        <div class="review">
+          <h2>Reviews</h2>
+          <p>
+        </div>
       </div>
     </div>
-    <div class="column" style="margin-left: auto;">
-      <div class= "float-right">
+    <div class="column date-picker-column">
+    <div class= "margin-show">
         <%= simple_form_for @booking do |f| %>
           <% placedate = Date.tomorrow %>
           <%  placestartdate = DateTime.new(placedate.year, placedate.month, placedate.day).change(hour: 13).strftime("%Y-%m-%d %H:%M") %>
@@ -42,14 +48,13 @@
           <%= f.input :nanny_id, as: :hidden, input_html: {value: params[:id]} %>
           <%= f.submit "BOOK", class: "btn btn-primary" %>
         <% end %>
-      </div>   
+      </div> 
+    </div>
+    <div class="column">
+      <div id="calendar" data-agenda="<%= @schedule %>" >    
     </div>
   </div>
-
-  
-  <div id="calendar" data-agenda="<%= @schedule %>" >
   </div>
-    
-</div>
+
 
 <%#= javascript_pack_tag 'init_calendar', 'data-turbolinks-track': 'reload', defer: true %>
