@@ -18,6 +18,8 @@ const initCalendar = () => {
     slotMinTime: '07:00:00',
     slotMaxTime: '23:00:01',
     firstDay: 1,
+    allDaySlot: false,
+    dayHeaderClassNames: 'calendar-day-header', 
 
     events: agenda
     // [
