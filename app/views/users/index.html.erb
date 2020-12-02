@@ -26,6 +26,10 @@
             <% num.times do %>
               <i class="fas fa-star fa-lg" style = "font-size: 10px"></i> 
             <% end %>
+            <% diff = 5 - num %>
+            <% diff.times do %>
+              <i class="fas fa-star fa-lg" style = "font-size: 10px;color:gray"></i>
+            <% end %>
           </div>
         </div>
       <% end %>
