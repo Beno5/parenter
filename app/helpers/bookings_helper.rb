@@ -12,6 +12,7 @@ module BookingsHelper
       else
         color = ['#F49CB0', '#F4B29C', '#CB9CF4', '#F49CDA'].sample
       end
+      duration = (booking.end_date - booking.start_date)/3600
       {
         title: title,
         start: booking.start_date.iso8601,
