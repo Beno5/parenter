@@ -25,15 +25,14 @@
             <%if booking.status == "pending" %>
             <h5 class="status">Status: Pending</h5>
             <% elsif booking.status == "confirmed" %>
-            <h5 class="status">Status: Confirmed</h5>
+            <h5 class="status">Status: Confirmed <i class="fas fa-check check-mark"></i><h5>
             
             
             <% end %>
             <div class="buttons-dashboard-parent">
-             <h5> <%= link_to 'Cancel', booking_path(booking), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
-              <%= link_to "Details", booking_path(booking), class: "btn btn-secondary" %>
+              <%= link_to "Details", booking_path(booking), class: "btn btn-primary" %>
+              <%= link_to "Write review", booking_path(booking), class: "btn btn-secondary" %>
               </h5>
-              <%= link_to "Write review", booking_path(booking), class: "btn btn-secondary review-button" %>
               </div>
             </div>
 
@@ -68,6 +67,8 @@
                 <% else %>
                  <div class="buttons-accept-decline">
                 <h5 class="status">Status: Confirmed <i class="fas fa-check check-mark"></i><h5>
+                <%= link_to "Details", booking_path(booking), class: "btn btn-primary details" %>
+
                 </div>
             <% end %>
              
