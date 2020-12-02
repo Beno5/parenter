@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     @schedule = helpers.events_hash(bookings, role)
     @booking = Booking.new
     @parent = current_user
-
+    @reviews = Review.where(nanny: @user)
   end
 
   private

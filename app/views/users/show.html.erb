@@ -38,15 +38,35 @@
           </ul>
           
         </div>
-        
-        <div class="review">
-          <h2>Reviews</h2>
-          <p>
-        </div>
       </div>
     </div>
     <div class="column date-picker-column">
       <div id="calendar" data-agenda="<%= @schedule %>" >    
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+        <h2 class="reviews-header">Reviews</h2>
+
+      <div class="reviews">
+          <% @reviews.each do |review| %>
+          <div class="review-card">
+          <div class="review-parent">
+            <div class="circle-navbar">
+                <%= cl_image_tag current_user.photo.key, class: "avatar-very-large1 " %>
+            </div> 
+            <div class="review-info">
+              <div>
+                <strong><%= review.parent.first_name %></strong>
+              </div> 
+              <h6 style="margin: 0;">Rating: <%= review.rating %></h6>
+            </div> 
+          </div>  
+          <%= review.content %>
+          </div>
+          <% end %> 
+      </div>
+      <br>
     </div>
   </div>
   </div>

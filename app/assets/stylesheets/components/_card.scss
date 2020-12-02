@@ -84,3 +84,29 @@ position: absolute;
 bottom: 5%;
 left: 9%;
 }
+
+.review-card {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  /* overflow: hidden; */
+  /* height: 120px; */
+  background: white;
+  /* box-shadow: 0 0 15px rgba(0,0,0,0.2); */
+  /* display: flex; */
+  align-items: center;
+  border-radius: 10px;
+  /* width: 250px; */
+  margin: 5px;
+  padding:10px;
+}
+
+.review-info {
+  align-items: center;
+  width: 251px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-parent {
+  display: flex;
+  justify-content: space-between;
+}
