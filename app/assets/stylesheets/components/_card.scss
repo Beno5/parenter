@@ -12,12 +12,12 @@
 }
 
 .card-product img {
-  height: 90%;
-  /* width: 120px; */
+  border-radius: 50%;
+  width: 170px; 
   -o-object-fit: cover;
   object-fit: cover;
   border-radius: 50px;
-  margin: 6px;
+  margin: 10px;
 }
 
 .card-product h2 {
