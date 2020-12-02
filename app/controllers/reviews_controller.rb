@@ -1,12 +1,12 @@
 class ReviewsController < ApplicationController
   def new
-    @review = Review.new
-    @user_nanny = User.find(params[:nanny_id])
-    @review.nanny = @user_nanny
+    # @review = Review.new
+    # @user_nanny = User.find(params[:nanny_id])
+    # @review.nanny = @user_nanny
   end
 
   def create
-    @user_nanny = User.find(params[:nanny_id])
+    @user_nanny = User.find(params[:review][:nanny_id])
     @review = Review.new(review_params)
     @review.parent = current_user
 
