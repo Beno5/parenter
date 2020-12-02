@@ -1,13 +1,13 @@
 
 <div class="info-window-container">
 
-  <div class="info-picture">
-    <%= cl_image_tag user.photo.key, class:"avatar-large info-window-picture", crop: :fill %>
+  <div class="circle-navbar">
+    <%= cl_image_tag user.photo.key, class:"avatar-very-large1", crop: :fill %>
   </div>
 
   <div class="info-name-price">
     <h2><%= user.first_name %> </h2>
-    <h2> <%= user.price %></h2>
+    <h2>€ <%= user.price %></h2>
   </div>
 
 

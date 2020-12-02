@@ -20,7 +20,7 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
       const element = document.createElement('div');
-      element.className = 'avatar';
+      element.className = 'avatar-very-large1';
       element.style.backgroundPosition = "center";
       element.style.backgroundRepeat = "no-repeat";
       element.style.backgroundImage = `url('https://res.cloudinary.com/beno5/image/upload/v1606493572/${marker.image_url}.jpg')`;
