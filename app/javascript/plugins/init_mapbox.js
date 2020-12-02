@@ -23,7 +23,7 @@ const initMapbox = () => {
       element.className = 'avatar-very-large1';
       element.style.backgroundPosition = "center";
       element.style.backgroundRepeat = "no-repeat";
-      element.style.backgroundImage = `url('https://res.cloudinary.com/beno5/image/upload/v1606493572/${marker.image_url}.jpg')`;
+      element.style.backgroundImage = `url('https://res.cloudinary.com/beno5/image/upload/c_thumb,g_face,h_300,w_300/v1606493572/${marker.image_url}.jpg')`;
       element.style.backgroundSize = 'contain';
       element.style.width = '40px';
       element.style.height = '40px';
@@ -39,3 +39,4 @@ const initMapbox = () => {
   
 
 export { initMapbox };
+
