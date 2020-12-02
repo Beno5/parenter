@@ -41,7 +41,6 @@
 }
 
 .card-product-infos {
-  padding: 6px;
   position: relative;
   width: 100%;
 }
@@ -52,7 +51,10 @@
   vertical-align: middle;
   line-height: 5px;
   color:#EC4469;
-  padding: 10px 20px 0px 0px;
+}
+
+.card-product-infos i {
+  font-size: 10px;
 }
 
 .hover-delete {
