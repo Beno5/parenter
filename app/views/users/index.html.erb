@@ -15,7 +15,7 @@
         <div class="card-product">
           <%= cl_image_tag user.photo.key,height: 300, width: 300, class:"card-product", crop: :fill %>
           <div class="card-product-infos">
-            <h2><%= user.first_name %></h2>
+            <h2><%= user.first_name %></h2><br>
             <h5 class= "right">€<%= user.price %></h5>
 
             <% @avg_rating = Review.where(nanny_id: user.id).average(:rating) %>
