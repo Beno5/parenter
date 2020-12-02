@@ -16,8 +16,8 @@
 
 @import 'mapbox-gl/dist/mapbox-gl';
 @import "flatpickr/dist/flatpickr";
-@import "@fullcalendar/common/main.css";
-@import "@fullcalendar/timegrid/main.css";
+@import "fullcalendar/main";
+
 
 /* ----------------------
 primary color: #EC4369 or #EC4469??
@@ -29,7 +29,3 @@ typeface color: #454E57
 // html * {
 //    color: #454E57;
 // }
-.container-custom {
-  margin-right: 50px;
-  margin-left: 50px;
-}

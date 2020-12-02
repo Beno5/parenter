@@ -10,8 +10,9 @@
 
 .navbar-lewagon .navbar-brand img {
   position: relative;
-  width: 70px;
+  width: 100px;
   left: 15px;
+
 }
 
 .custom_nav_color {
@@ -29,12 +30,13 @@
 
 .custom_nav_color .navbar-brand img {
   position: relative;
-  width: 70px;
+  width: 100px;
   left: 15px;
 }
 
 .center-alignment {
   text-align: center;
+  font-size: small;
 }
 
 .unsigned-nav {
@@ -54,6 +56,7 @@
   align-items: center;
   display: inline-block;
   margin: 0;
+  cursor: pointer;
  }
 
  .nav-link-custom {
@@ -72,4 +75,8 @@
    .nav-link {
      margin-left: 50px;
      margin-right: 50px;
+   }
+
+   .font-white {
+     color:white;
    }

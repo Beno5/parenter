@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to root_path, class: "navbar-brand" do %>
-    <%= image_tag "Parenter Logo 1.png"%>
+    <%= image_tag "Parenter-logo-2.png"%>
   <% end %>
   <% if user_signed_in? %>
     <ul class="navbar-nav">
@@ -16,15 +16,14 @@
       </li>
     </ul>
     <div class="nav-item dropdown center-alignment">
-      <div class="circle-navbar">
-        <%= cl_image_tag current_user.photo.key, class: "avatar-very-large1 dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+      <div class="circle-navbar dropdown-toggle", id= "navbarDropdown", data-toggle= "dropdown" , aria-haspopup= true, aria-expanded= false>
+        <%= cl_image_tag current_user.photo.key, class: "avatar-very-large1 " %>
       </div>
       <div>
         <%= current_user.first_name %>
       </div>
       <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <%= link_to "Action", "#", class: "dropdown-item" %>
-        <%= link_to "Another action", "#", class: "dropdown-item" %>
+        <%= link_to "My Profile", "/users/edit", class: "dropdown-item" %>
         <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
       </div>
     </div>
