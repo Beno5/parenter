@@ -26,11 +26,37 @@
                     hint: "we need your current password to confirm your changes",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
+        <%= f.input :first_name,
+                    required: false,
+                    input_html: { autocomplete: "first name" } %>
+        <%= f.input :last_name,
+                    required: false,
+                    input_html: { autocomplete: "last name" } %>            
+        <%= f.input :address,
+                    required: false,
+                    input_html: { autocomplete: "address" } %>
         <%= f.input :number_of_kids,
                     required: false,
-                    input_html: { autocomplete: "number of kids" } %>
+                    input_html: { autocomplete: "number of kids" } %>            
+        <%= f.input :is_nanny,
+                    required: false,
+                    input_html: { autocomplete: "is nanny" } %> 
+        <%= f.input :bio,
+                    required: false,
+                    input_html: { autocomplete: "bio" } %>              
+        <%= f.input :price,
+                    required: false,
+                    input_html: { autocomplete: "price" } %> 
+        <%= f.input :max_cap,
+                    required: false,
+                    input_html: { autocomplete: "max cap" } %> 
+        <%= f.input :can_host,
+                    required: false,
+                    input_html: { autocomplete: "can host" } %>
+        <%= f.input :year_of_birth,
+                    required: false,
+                    input_html: { autocomplete: "year of birth" } %>              
 
-                  
       <div class="form-actions">
         <%= f.button :submit, "Update", class: "btn btn-primary" %>
         <br>
@@ -40,5 +66,10 @@
       <% end %>
       </div>
     </div>
+                
+      <div class="circle-edit-page">
+        <%= cl_image_tag @user.photo.key, class:"avatar-very-large1", width: 300, height: 300, crop: :fill %>
+      </div>
+     
   </div>
 </div>
