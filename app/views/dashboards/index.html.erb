@@ -11,29 +11,31 @@
         <% if current_user == booking.parent %>
           <div class="nanny-card">
             <%= link_to user_path(booking.nanny), class:"hover-delete" do %>
-              <div class="card-product">
-                <%= cl_image_tag booking.nanny.photo.key, class:"card-product", crop: :fill %>
-                <div class="card-product-infos">
-                  <h2><%= booking.nanny.first_name %></h2>
-                  <h5 class= "right">€<%= booking.nanny.price %></h5>
-                  <p>Rating</p>
-                </div>
-              </div>
+        <div class="card-product">
+          <%= cl_image_tag booking.nanny.photo.key,height: 300, width: 300, class:"card-product", :gravity=>"face", crop: :thumb %>
+          <div class="card-product-infos">
+            <h2><%= booking.nanny.first_name %></h2><br>
+            <h5 class= "right">€<%= booking.nanny.price %></h5>
+            
+            <h5>rating</h5>
+
+            </div>
+            </div>
             <% end %> 
 
             <div class= "booking__btns">
             <%if booking.status == "pending" %>
-            <h5 class="status">Status: Pending</h5>
+              <h5 class="status">Status: Pending  <i class="far fa-clock check-mark clock-bold"></i></h5>
             <% elsif booking.status == "confirmed" %>
-            <div class="buttons-dashboard-parent">
-            <h5 class="status">Status: Confirmed <i class="fas fa-check check-mark"></i><h5>
+              <h5 class="status">Status: Confirmed <i class="fas fa-check check-mark"></i><h5>
+            <div class="buttons-dashboard-details">
             
             <% if Review.where(nanny_id: booking.nanny.id, parent_id: current_user.id).present? %>
-            <% %>
+              <% %>
             <% else %>
 
             <!-- Button trigger modal -->
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn btn-secondary review-margin" data-toggle="modal" data-target="#exampleModal">
               Write review
             </button>
           
@@ -67,11 +69,14 @@
            <% end %>
 
               
+              <%= link_to "Details", booking_path(booking), class: "btn btn-primary" %>
             </div>
             
             <% end %>
-              <%= link_to "Details", booking_path(booking), class: "btn btn-primary" %>
               
+              <% if booking.status == "pending" %>
+              <div class="d-flex details-second"><%= link_to "Details", booking_path(booking), class: "btn btn-primary" %></div>
+              <% end %>
               
             </div>
 
@@ -79,7 +84,7 @@
         <% elsif current_user == booking.nanny %>
           <div class="parent-card">
             <div class="card-product">
-              <%= cl_image_tag booking.parent.photo.key, class:"card-product", crop: :fill %>
+              <%= cl_image_tag booking.parent.photo.key, class:"card-product", :gravity=>"face", crop: :thumb %>
               <div class="card-product-infos">
                 <h2><%= booking.parent.first_name %></h2>
                 <br>

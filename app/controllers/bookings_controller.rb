@@ -53,7 +53,6 @@ class BookingsController < ApplicationController
     redirect_to dashboards_path
   end
 
-
   private
 
   def find_booking_index

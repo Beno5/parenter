@@ -18,7 +18,7 @@
         <% end %>
         <div class="show-card">
           <div class="circle-show-page">
-            <%= cl_image_tag @user.photo.key, class:"avatar-very-large1", width: 300, height: 300, crop: :fill %>
+            <%= cl_image_tag @user.photo.key, class:"avatar-very-large1", width: 300, height: 300, :gravity=>"face", crop: :thumb %>
           </div>
           <div class="show-card__info">
             <i class="fas fa-star fa-lg"></i> 
