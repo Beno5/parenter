@@ -3,6 +3,8 @@ class UsersController < ApplicationController
   before_action :find_index, only: %i[show]
 
   def index
+    @users = User.all
+
     if params[:query].present?
       @users = User.where("address ILIKE ?", "%#{params[:query]}%").where(is_nanny: true)
       @current_user_geocoded = current_user.geocode #=> [lat, long]
