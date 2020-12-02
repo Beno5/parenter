@@ -4,15 +4,20 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-
+    @user = current_user
     if params[:query].present?
       @users = User.where("address ILIKE ?", "%#{params[:query]}%").where(is_nanny: true)
+      if @user.address.present?
       @current_user_geocoded = current_user.geocode #=> [lat, long]
       @current_user_marker = {
-        lat: @current_user_geocoded[0],
-        lng: @current_user_geocoded[1],
-        image_url: current_user.photo.key
-      }
+          lat: @current_user_geocoded[0],
+          lng: @current_user_geocoded[1],
+          image_url: if @user.photo.attached? then @user.photo.key end
+          
+        }
+      else
+        
+      end
       @markers = @users.geocoded.map do |user|
         {
           lat: user.latitude,
