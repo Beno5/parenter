@@ -22,10 +22,10 @@
             <h2><%= user.first_name %></h2><br>
             <h5 class= "right">€<%= user.price %></h5>
 
-            <% @avg_rating = Review.where(nanny_id: user.id).average(:rating) %>
+            <% avg_rating = Review.where(nanny_id: user.id).average(:rating) %>
             <% num = 0 %>
-            <% if @avg_rating != nil %>
-              <% num = num + @avg_rating.round %>
+            <% if avg_rating != nil %>
+              <% num = num + avg_rating.round %>
             <% end %>
             <% num.times do %>
               <i class="fas fa-star" style= "color: orange"></i> 
