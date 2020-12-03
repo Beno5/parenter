@@ -348,9 +348,9 @@ puts 'Creating fake users...'
   arthur.save!
 
 
-  booking5 = Booking.create(nanny: sarah, parent: michael, start_date: "Thu, 26 Nov 2020 12:06:13 UTC +00:00", end_date: "Thu, 26 Nov 2020 15:16:13 UTC +00:00", status: "confirmed")
-  booking4 = Booking.create(nanny: martina, parent: greg, start_date: "Sat, 5 Dec 2020 19:00:00 UTC +00:00", end_date: "Sat, 5 Dec 2020 21:00:00 UTC +00:00", status: "confirmed")
-  booking5 = Booking.create(nanny: mario, parent: arthur, start_date: "Sat, 5 Dec 2020 16:00:00 UTC +00:00", end_date: "Sat, 5 Dec 2020 17:00:00 UTC +00:00", status: "pending")
+  booking5 = Booking.create(nanny: sarah, parent: michael, start_date: "2020-12-04 12:00:00", end_date: "2020-12-04 17:00:00", status: "confirmed")
+  booking4 = Booking.create(nanny: martina, parent: greg, start_date: "2020-12-05 19:00:00", end_date: "2020-12-05 21:00:00", status: "confirmed")
+  booking5 = Booking.create(nanny: mario, parent: arthur, start_date: "2020-12-05 16:00:00", end_date: "2020-12-05 17:00:00", status: "pending")
 
   review5 = Review.create(nanny: sarah, parent: greg, content: 'Sarah was very good and kids love her!', rating: 5)
   review3 = Review.create(nanny: mario, parent: greg, content: 'Mario is a very good babysitter. He is very kind and always flexible', rating: 4)
