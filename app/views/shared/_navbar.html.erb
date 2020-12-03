@@ -20,7 +20,7 @@
         <% if current_user.photo.attached? %>
           <%= cl_image_tag current_user.photo.key, class: "avatar-very-large1", width: 300, height: 300, :gravity=>"face", crop: :thumb %>
           <% else %>
-          <%= image_tag("question_mark", size: "50x50")%>  
+          <%= image_tag("question_mark.jpg", size: "50x50")%>  
           <% end %>
       </div>
       <div>
