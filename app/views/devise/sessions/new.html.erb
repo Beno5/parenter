@@ -1,6 +1,7 @@
 <div class="container-custom">
   <br>
   <div class="container-log-in">
+  <div class="overview-box-login">
   <h2 style="text-align: center;">Log in</h2>
 
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -21,6 +22,7 @@
   <% end %>
   <div class="center-buttons">
   <%= render "devise/shared/links" %>
+  </div>
   </div>
   </div>
 </div>
