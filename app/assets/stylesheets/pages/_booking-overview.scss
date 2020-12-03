@@ -30,20 +30,24 @@
    position: relative;
    display: flex;
    flex-direction: row;
-   background-color: lightgrey;
-   border-radius: 5px;
+   background-color: #F4F4F4;
+   border-radius: 25px;
+   box-shadow: 0 0 15px rgba(0,0,0,0.2);
    width: 800px;
    padding: 15px;
    margin: 10px;
  }
 
  .booking__btns {
-   margin: 50px 0px 0px 160px;
+   width: 300px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   margin: 50px 0px 0px 210px;
  }
 
- .booking__btns a {
-   margin: 0px 10px;
- }
+ 
 
  .container-chat {
   height: 500px;
@@ -75,5 +79,15 @@
   color: #EC4369;
 }
 
+.buttons-dashboard-parent {
+  display: flex;
+}
 
+.buttons-dashboard-details {
+  display: flex;
+  justify-content: space-evenly;
+}
 
+.details-second {
+  justify-content: flex-end;
+}

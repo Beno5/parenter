@@ -1,7 +1,11 @@
+<div class="margin-left-show">
+ <%= link_to "Go back", :back, class: "btn btn-secondary" %>
+ </div>
+
 <div class="container-custom">
 <div class="users-page mb-3 mt-3">
   <div class="users-list mr-2">
-    <%= form_tag users_path, method: :get, class: "user-search" do %>
+    <%= form_tag users_path, method: :get, class: "user-search search-edited" do %>
       <%= text_field_tag :query,
         params[:query],
         class: "form-control",
@@ -10,17 +14,29 @@
     <% end %>
 
     <div class="users-grid mb-3 mt-3">
-    <% @users.each do |user| %>
-    <%= link_to user_path(user), class:"hover-delete" do %>
-      <div class="card-product">
-        <%= cl_image_tag user.photo.key,height: 300, width: 300, class:"card-product", crop: :fill %>
-        <div class="card-product-infos">
-          <h2><%= user.first_name %></h2>
-          <h5 class= "right">€<%= user.price %></h5>
-          <p>Rating</p>
+      <% @users.each do |user| %>
+        <%= link_to user_path(user), class:"hover-delete" do %>
+        <div class="card-product">
+          <%= cl_image_tag user.photo.key,height: 300, width: 300, class:"card-product", :gravity=>"face", crop: :thumb %>
+          <div class="card-product-infos">
+            <h2><%= user.first_name %></h2><br>
+            <h5 class= "right">€<%= user.price %></h5>
+
+            <% @avg_rating = Review.where(nanny_id: user.id).average(:rating) %>
+            <% num = 0 %>
+            <% if @avg_rating != nil %>
+              <% num = num + @avg_rating.round %>
+            <% end %>
+            <% num.times do %>
+              <i class="fas fa-star fa-lg"></i> 
+            <% end %>
+            <% diff = 5 - num %>
+            <% diff.times do %>
+              <i class="fas fa-star fa-lg" style = "color:gray"></i>
+            <% end %>
+          </div>
         </div>
-      </div>
-        <% end %>
+      <% end %>
       <% end %>
     </div>
   </div>

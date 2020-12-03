@@ -281,7 +281,7 @@ puts 'Creating fake users...'
   review5 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 5)
   review3 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 4)
   review2 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 3)
-  review1 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 5)
-  review4 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 5)
+  review1 = Review.create(nanny: bob, parent: michael, content: 'Sarah was very good and kids love her!', rating: 1)
+  review4 = Review.create(nanny: bob, parent: michael, content: 'Sarah was very good and kids love her!', rating: 5)
 puts 'Finished!'
 

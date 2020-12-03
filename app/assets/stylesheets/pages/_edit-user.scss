@@ -6,15 +6,15 @@
 
 .edit-profile-div {
   min-height: 100vh;
-    /* margin-left: 50px; */
+    margin-left: 10%;
     /* margin-right: 50px; */
     position: absolute;
     left: 5%;
-    width: 361px;
+    width: 400px;
 }
 .overview-box1 {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  height: 1500px;
+  height: 900px;
   margin: 10px;
   text-align: center;
   border-radius: 20px;
@@ -28,20 +28,17 @@
 
 .circle-edit-page {
   border-radius: 50%;
-  /* height: 250px; */
-  /* width: 250px; */
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  display: inline-block;
-  margin: 20px;
-  margin-left: 0px;
-  position: absolute;
-  /* left: 0px; */
+    height: 120px;
+    width: 120px;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 35px;
+    margin-left: 220px;
+    
 }
 
 .container-log-in {
   padding: 400px;
   padding-top: 13px;
 }
+

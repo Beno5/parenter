@@ -4,11 +4,13 @@
 <div class="container-custom">
   <div class="overview-box1">
     <h2>Edit your profile <%= current_user.first_name  %></h2>
-    <div class="edit-profile-div">
+    <br>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
+      <div class="row">
+      <div class="col-sm-6">
         <%= f.input :email, required: true, autofocus: true %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -35,9 +37,22 @@
         <%= f.input :address,
                     required: false,
                     input_html: { autocomplete: "address" } %>
+        </div>            
+        <div class="col-sm-6"> 
+        
+        <div class="circle-edit-page">
+             <% if current_user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, class:"avatar-very-large1", width: 300, height: 300, :gravity=>"face", crop: :thumb %>
+         
+         <% else %>
+         <%= image_tag("question_mark", size: "300x300", class:"avatar-very-large1")%>    
+         <% end %>
+      </div> 
+      <h6>Change Your Profile<%= f.input :photo, as: :file, style:"text-align:center;" %> </h6>
+            
         <%= f.input :is_nanny,
                     required: false,
-                    input_html: { autocomplete: "is nanny" } %> 
+                    input_html: { autocomplete: "Are you a nanny?" } %> 
         <%= f.input :year_of_birth,
                     required: false,
                     input_html: { autocomplete: "year of birth" } %>              
@@ -59,8 +74,9 @@
                     required: false,
                     input_html: { autocomplete: "can host" } %>
         <% end %>   
-        <%= f.input :photo, as: :file %>         
-
+        
+        </div>         
+        </div>
       <div class="form-actions">
         <%= f.button :submit, "Update", class: "btn btn-primary" %>
         <br>
@@ -69,11 +85,9 @@
       </div>
       <% end %>
       </div>
-    </div>
+    
                 
-      <div class="circle-edit-page">
-        <%= cl_image_tag @user.photo.key, class:"avatar-very-large1", width: 300, height: 300, crop: :fill %>
-      </div>
+      
      
   </div>
 </div>

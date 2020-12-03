@@ -11,49 +11,86 @@
         <% if current_user == booking.parent %>
           <div class="nanny-card">
             <%= link_to user_path(booking.nanny), class:"hover-delete" do %>
-              <div class="card-product">
-                <%= cl_image_tag booking.nanny.photo.key, class:"card-product", crop: :fill %>
-                <div class="card-product-infos">
-                  <h2><%= booking.nanny.first_name %></h2>
-                  <h5 class= "right">€<%= booking.nanny.price %></h5>
-                  <p>Rating</p>
-                </div>
-              </div>
+        <div class="card-product">
+          <%= cl_image_tag booking.nanny.photo.key,height: 300, width: 300, class:"card-product", :gravity=>"face", crop: :thumb %>
+          <div class="card-product-infos">
+            <h2><%= booking.nanny.first_name %></h2><br>
+            <h5 class= "right">€<%= booking.nanny.price %></h5>
+            
+            <h5>rating</h5>
+
+            </div>
+            </div>
             <% end %> 
 
             <div class= "booking__btns">
             <%if booking.status == "pending" %>
-            <h5 class="status">Status: Pending</h5>
+              <h5 class="status">Status: Pending  <i class="far fa-clock check-mark clock-bold"></i></h5>
             <% elsif booking.status == "confirmed" %>
-            <h5 class="status">Status: Confirmed</h5>
+              <h5 class="status">Status: Confirmed <i class="fas fa-check check-mark"></i><h5>
+            <div class="buttons-dashboard-details">
             
+            <% if Review.where(nanny_id: booking.nanny.id, parent_id: current_user.id).present? %>
+              <% %>
+            <% else %>
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-secondary review-margin" data-toggle="modal" data-target="#exampleModal">
+              Write review
+            </button>
+          
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Write review</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="form-new">
+                      <%= simple_form_for (@review) do |f| %>
+                        <%= f.input :content %>
+                        <%= f.input :rating %>
+                        <%= f.input :nanny_id, as: :hidden, input_html: {value: booking.nanny.id} %>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <%= f.button :submit, class: "btn btn-primary" %>
+                      <% end %>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+           <% end %>
+
+              
+              <%= link_to "Details", booking_path(booking), class: "btn btn-primary" %>
+            </div>
             
             <% end %>
-            <div class="buttons-dashboard-parent">
-             <h5> <%= link_to 'Cancel', booking_path(booking), class: "btn btn-primary", method: :delete, data: { confirm: "Are you sure?" } %>
-              <%= link_to "Details", booking_path(booking), class: "btn btn-secondary" %>
-              </h5>
-              <%= link_to "Write review", booking_path(booking), class: "btn btn-secondary review-button" %>
-              </div>
+              
+              <% if booking.status == "pending" %>
+              <div class="d-flex details-second"><%= link_to "Details", booking_path(booking), class: "btn btn-primary" %></div>
+              <% end %>
+              
             </div>
 
           </div>
         <% elsif current_user == booking.nanny %>
           <div class="parent-card">
             <div class="card-product">
-              <%= cl_image_tag booking.parent.photo.key, class:"card-product", crop: :fill %>
+              <%= cl_image_tag booking.parent.photo.key, class:"card-product", :gravity=>"face", crop: :thumb %>
               <div class="card-product-infos">
                 <h2><%= booking.parent.first_name %></h2>
                 <br>
                 <h2>Children: <%= booking.parent.number_of_kids %></h2>
               </div>
-              <div class="buttons-accept-decline">
-              <% if booking.status == "pending" %>
-               
-            <% else %>
-            <% end %>
-            </div>
-            
+
             </div>
             
             <% if booking.status == "pending" %>
@@ -68,6 +105,8 @@
                 <% else %>
                  <div class="buttons-accept-decline">
                 <h5 class="status">Status: Confirmed <i class="fas fa-check check-mark"></i><h5>
+                <%= link_to "Details", booking_path(booking), class: "btn btn-primary details" %>
+
                 </div>
             <% end %>
              

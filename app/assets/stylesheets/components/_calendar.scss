@@ -3,7 +3,15 @@
   margin-right: 0;
   margin-bottom: 0;
   margin-top: 0;
+<<<<<<< HEAD
   height: 850px;
+=======
+  border-radius: 25px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  padding: 10px;
+  width: 400px;
+
+>>>>>>> 85e1eca707cd283cbd83ffa8a4f3c4cb6f11c10b
 }
 
 .fc-today-button {
@@ -14,3 +22,29 @@
 .calendar-day-header a {
   color: #EC4469;
 }
+<<<<<<< HEAD
+=======
+
+// .fc-today-button {
+//   background-color: pink !important;
+// }
+
+// .calendar-day-header a {
+//   color:pink;
+// }
+
+.custom-calendar {
+  height: 500px;
+}
+
+.fc-toolbar-chunk {
+  width: 170px !important;
+  display: flex;
+}
+
+.fc-toolbar-title {
+  font-size: 1em !important;
+  width: 200px;
+  font-weight: bold;
+}
+>>>>>>> 85e1eca707cd283cbd83ffa8a4f3c4cb6f11c10b
