@@ -276,12 +276,88 @@ puts 'Creating fake users...'
   )
   darlene.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1606488094/valentin-lacoste-ggAPxrb4Deg-unsplash_g4gxqo.jpg"), filename: "alice.jpg", content_type: 'image/png')
   darlene.save!
-  booking5 = Booking.create(nanny: sarah, parent: michael, start_date: "Thu, 26 Nov 2020 12:06:13 UTC +00:00", end_date: "Thu, 26 Nov 2020 15:16:13 UTC +00:00", status: "pending")
 
-  review5 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 5)
-  review3 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 4)
-  review2 = Review.create(nanny: sarah, parent: michael, content: 'Sarah was very good and kids love her!', rating: 3)
-  review1 = Review.create(nanny: bob, parent: michael, content: 'Sarah was very good and kids love her!', rating: 1)
-  review4 = Review.create(nanny: bob, parent: michael, content: 'Sarah was very good and kids love her!', rating: 5)
+  greg = User.new(
+    email: "greg@example.com",
+    password: "123456",
+    first_name: "Greg",
+    last_name: "Smith",
+    address: "Jahnstraße 120, 70597 Stuttgart",
+    number_of_kids: 2,
+    can_host: true,
+    year_of_birth: 1985,
+    is_nanny: false,
+  )
+  greg.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1607007853/joseph-gonzalez-iFgRcqHznqg-unsplash_vmrlpn.jpg"), filename: "greg.jpg", content_type: 'image/png')
+  greg.save!
+
+  bill = User.new(
+    email: "bill@example.com",
+    password: "123456",
+    first_name: "Bill",
+    last_name: "Johnson",
+    address: "Jahnstraße 25, 70597 Stuttgart",
+    number_of_kids: 3,
+    can_host: true,
+    year_of_birth: 1980,
+    is_nanny: false,
+  )
+  bill.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1607007983/rui-silvestre-hAMJpesMeDE-unsplash_hqihmz.jpg"), filename: "bill.jpg", content_type: 'image/png')
+  bill.save!
+
+  philip = User.new(
+    email: "philip@example.com",
+    password: "123456",
+    first_name: "Philip",
+    last_name: "Schulz",
+    address: "Jahnstraße 2, 70597 Stuttgart",
+    number_of_kids: 1,
+    can_host: true,
+    year_of_birth: 1982,
+    is_nanny: false,
+  )
+  philip.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1607008071/aatik-tasneem-7omHUGhhmZ0-unsplash_zwbpv9.jpg"), filename: "philip.jpg", content_type: 'image/png')
+  philip.save!
+
+  hans = User.new(
+    email: "hanz@example.com",
+    password: "123456",
+    first_name: "Hans",
+    last_name: "Schmit",
+    address: "Jahnstraße 7, 70597 Stuttgart",
+    number_of_kids: 2,
+    can_host: true,
+    year_of_birth: 1982,
+    is_nanny: false,
+  )
+  hans.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1607008141/albert-dera-uIcbTOhMHOU-unsplash_rb1uln.jpg"), filename: "hans.jpg", content_type: 'image/png')
+  hans.save!
+
+  arthur = User.new(
+    email: "arthur@example.com",
+    password: "123456",
+    first_name: "Arthur",
+    last_name: "Kahn",
+    address: "Jahnstraße 7, 70597 Stuttgart",
+    number_of_kids: 2,
+    can_host: true,
+    year_of_birth: 1982,
+    is_nanny: false,
+  )
+  arthur.photo.attach(io: URI.open("https://res.cloudinary.com/beno5/image/upload/v1607008263/ali-yahya-155huuQwGvA-unsplash_oie3jy.jpg"), filename: "arthur.jpg", content_type: 'image/png')
+  arthur.save!
+
+
+  booking5 = Booking.create(nanny: sarah, parent: michael, start_date: "Thu, 26 Nov 2020 12:06:13 UTC +00:00", end_date: "Thu, 26 Nov 2020 15:16:13 UTC +00:00", status: "confirmed")
+  booking4 = Booking.create(nanny: martina, parent: greg, start_date: "Sat, 5 Dec 2020 19:00:00 UTC +00:00", end_date: "Sat, 5 Dec 2020 21:00:00 UTC +00:00", status: "confirmed")
+  booking5 = Booking.create(nanny: mario, parent: arthur, start_date: "Sat, 5 Dec 2020 16:00:00 UTC +00:00", end_date: "Sat, 5 Dec 2020 17:00:00 UTC +00:00", status: "pending")
+
+  review5 = Review.create(nanny: sarah, parent: greg, content: 'Sarah was very good and kids love her!', rating: 5)
+  review3 = Review.create(nanny: mario, parent: greg, content: 'Mario is a very good babysitter. He is very kind and always flexible', rating: 4)
+  review2 = Review.create(nanny: mario, parent: philip, content: 'Mario is not bad. He tries his best but my kids are just too naughty', rating: 3)
+  review1 = Review.create(nanny: mario, parent: bill, content: 'I highly recommend Mario. He likes to have fun with the kids and my kids always ask when is Mario coming again', rating: 5)
+  review4 = Review.create(nanny: mario, parent: hans, content: 'Mario is very cheap but also worth every penny!', rating: 5)
+  review6 = Review.create(nanny: martina, parent: philip, content: 'She was very untrustworthy because she came 20 minutes late', rating: 1)
+  review7 = Review.create(nanny: martina, parent: arthur, content: 'I love the fact that Martina is able to over to our place as sometimes I do not have time to drop of my daughter at her place', rating: 4)
 puts 'Finished!'
 
