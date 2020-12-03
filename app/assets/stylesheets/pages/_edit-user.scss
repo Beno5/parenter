@@ -14,7 +14,7 @@
 }
 .overview-box1 {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  height: 900px;
+  height: 950px;
   margin: 10px;
   text-align: center;
   border-radius: 20px;
@@ -32,9 +32,9 @@
     width: 120px;
     overflow: hidden;
     display: flex;
-    margin-bottom: 35px;
-    margin-left: 220px;
-    
+    margin-bottom: 35px !important;
+    margin: auto;
+    display: block;
 }
 
 .container-log-in {
@@ -42,3 +42,17 @@
   padding-top: 13px;
 }
 
+.container-custom-edit {
+  margin-right: 300px;
+  margin-left: 300px;
+  min-height: 100vh;
+}
+
+.center-buttons {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}

@@ -15,8 +15,8 @@
         <div ><strong>Name: </strong> <%= @booking.nanny.first_name %> <%= @booking.nanny.last_name %></div>
         <div><strong>Price: </strong> <%= @booking.nanny.price %> €/h</div>
         <div><strong>Age: </strong> <%= Date.today.year - @booking.nanny.year_of_birth%> years</div>
-        <div><strong>Start Date: </strong> <%=@booking.start_date.strftime("%Y-%m-%d %H:%M") %></div>
-        <div><strong>End Date: </strong> <%=@booking.end_date.strftime("%Y-%m-%d %H:%M") %></div>
+        <div><strong>Start Date: </strong> <%=@booking.start_date.strftime("%a %e %b at %l:%M%p") %></div>
+        <div><strong>End Date: </strong> <%=@booking.end_date.strftime("%a %e %b at %l:%M%p") %></div>
         <% total_cost = (@booking.end_date - @booking.start_date)/3600*@booking.nanny.price.to_f %>
         <br>
         <div><strong>Total cost: </strong> <%= total_cost %> €</div>
@@ -34,7 +34,7 @@
               <div class="message-container" id="message-<%= message.id %>">
                 <i class="author">
                   <span><%= message.user.first_name %></span>
-                  <small><%= message.created_at.strftime("%a %b %e at %l:%M%p") %></small>
+                  <small><%= message.created_at.strftime("%a %e %b at %l:%M%p") %></small>
                 </i>
                 <p><%= message.content %></p>
               </div>
