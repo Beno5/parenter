@@ -84,22 +84,15 @@
         <% elsif current_user == booking.nanny %>
           <div class="parent-card">
             <div class="card-product">
-             <% if current_user.photo.attached? %>
+            <% if booking.parent.photo.attached? %>
               <%= cl_image_tag booking.parent.photo.key, class:"card-product", :gravity=>"face", crop: :thumb %>
-              <% else %>
-          <%= image_tag("question_mark.jpg", size: "50x50")%>  
+          <% else %>
+          <%= image_tag("question_mark.jpg", size: "80x80")%>  
           <% end %>
               <div class="card-product-infos">
-                <% if booking.parent.first_name.present? %>
                 <h2><%= booking.parent.first_name %></h2>
-                <% else %>
-                <h2><%= booking.parent.email %></h2>
                 <br>
-                <% if booking.parent.number_of_kids.present? %>
                 <h2>Children: <%= booking.parent.number_of_kids %></h2>
-                <% else %>
-                <h2></h2>
-                <% end %>
               </div>
 
             </div>
