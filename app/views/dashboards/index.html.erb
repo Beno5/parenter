@@ -17,7 +17,18 @@
             <h2><%= booking.nanny.first_name %></h2><br>
             <h5 class= "right">€<%= booking.nanny.price %></h5>
             
-            <h5>rating</h5>
+            <% avg_rating = Review.where(nanny_id: booking.nanny_id).average(:rating) %>
+            <% num = 0 %>
+            <% if avg_rating != nil %>
+              <% num = num + avg_rating.round %>
+            <% end %>
+            <% num.times do %>
+              <i class="fas fa-star" style= "color: orange"></i> 
+            <% end %>
+            <% diff = 5 - num %>
+            <% diff.times do %>
+              <i class="fas fa-star" style = "color:lightgray"></i>
+            <% end %>
 
             </div>
             </div>
