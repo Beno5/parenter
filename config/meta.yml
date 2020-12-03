@@ -1,7 +1,6 @@
 # config/meta.yml
 
-meta_product_name: "Product Name"
-meta_title: "Product name - Product tagline"
-meta_description: "Relevant description"
-meta_image: "cover.png" # should exist in `app/assets/images/`
-twitter_account: "@product_twitter_account"   # required for Twitter Cards
+meta_product_name: "Parenter"
+meta_title: "Parenter - Find Nannies"
+meta_description: "Hire nannies in your neighborhood"
+meta_image: "Parenter-logo-2_auto_x2.png" # should exist in `app/assets/images/`
