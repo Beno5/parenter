@@ -84,7 +84,11 @@
         <% elsif current_user == booking.nanny %>
           <div class="parent-card">
             <div class="card-product">
+            <% if booking.parent.photo.attached? %>
               <%= cl_image_tag booking.parent.photo.key, class:"card-product", :gravity=>"face", crop: :thumb %>
+          <% else %>
+          <%= image_tag("question_mark.jpg", size: "80x80")%>  
+          <% end %>
               <div class="card-product-infos">
                 <h2><%= booking.parent.first_name %></h2>
                 <br>
