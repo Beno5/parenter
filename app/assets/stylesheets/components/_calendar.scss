@@ -1,8 +1,9 @@
 #calendar {
-  margin: 10px auto;
+  margin: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-top: 0;
+  height: 850px;
 }
 
 .fc-today-button {
@@ -13,16 +14,3 @@
 .calendar-day-header a {
   color: #EC4469;
 }
-
-// .fc-today-button {
-//   background-color: pink !important;
-// }
-
-// .calendar-day-header a {
-//   color:pink;
-// }
-
-.custom-calendar {
-  height: 500px;
-}
-
