@@ -357,7 +357,7 @@ puts 'Creating fake users...'
   review2 = Review.create(nanny: mario, parent: philip, content: 'Mario is not bad. He tries his best but my kids are just too naughty', rating: 3)
   review1 = Review.create(nanny: mario, parent: bill, content: 'I highly recommend Mario. He likes to have fun with the kids and my kids always ask when is Mario coming again', rating: 5)
   review4 = Review.create(nanny: mario, parent: hans, content: 'Mario is very cheap but also worth every penny!', rating: 5)
-  review6 = Review.create(nanny: martina, parent: philip, content: 'I love Martina. She is very flexible and always comes on time', rating: 4)
-  review7 = Review.create(nanny: martina, parent: arthur, content: 'I love the fact that Martina is able to over to our place as sometimes I do not have time to drop of my daughter at her place', rating: 5)
+  review6 = Review.create(nanny: martina, parent: philip, content: 'She was very untrustworthy because she came 20 minutes late', rating: 1)
+  review7 = Review.create(nanny: martina, parent: arthur, content: 'I love the fact that Martina is able to over to our place as sometimes I do not have time to drop of my daughter at her place', rating: 4)
 puts 'Finished!'
 
