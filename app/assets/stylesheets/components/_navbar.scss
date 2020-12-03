@@ -59,24 +59,28 @@
   cursor: pointer;
  }
 
- .nav-link-custom {
-   color: white;
-   text-decoration: none;
-   margin: 50px;
-   }
+.nav-link-custom {
+  color: white;
+  text-decoration: none;
+  margin: 50px;
+  }
 
-   .nav-link-custom:hover{
-     text-decoration: none;
-     color: white;
-     font-weight: bolder;
-     
-   }
+.nav-link-custom:hover{
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+}
 
-   .nav-link {
-     margin-left: 50px;
-     margin-right: 50px;
-   }
+.nav-link {
+  margin-left: 50px;
+  margin-right: 50px;
+}
 
-   .font-white {
-     color:white;
-   }
+.font-white {
+  color:white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-weight: 500;
+}

@@ -1,8 +1,9 @@
 #calendar {
-  margin: 10px auto;
+  margin: 0;
   margin-right: 0;
   margin-bottom: 0;
   margin-top: 0;
+  height: 850px;
   border-radius: 25px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 10px;
@@ -10,22 +11,21 @@
 
 }
 
-.fc-today-button {
-  background-color: #EC4469 !important;
-  border-color: #EC4469 !important;
+.fc-today-button.fc-button.fc-button-primary {
+  background-color: white !important;
+  border-color: #EC4369 !important;
+  color: #EC4369 !important;
+  font-weight: bold;
+  border-radius: 30px;
+  width: 70px !important;
 }
 
+// fc-today-button fc-button fc-button-primary
 .calendar-day-header a {
-  color: #EC4469;
+  color: #343a40;
+  font-weight: 600;
+  font-family: "Work Sans", "Helvetica", "sans-serif";
 }
-
-// .fc-today-button {
-//   background-color: pink !important;
-// }
-
-// .calendar-day-header a {
-//   color:pink;
-// }
 
 .custom-calendar {
   height: 500px;
@@ -37,7 +37,23 @@
 }
 
 .fc-toolbar-title {
+  color: #343A40 !important;
   font-size: 1em !important;
   width: 200px;
   font-weight: bold;
+}
+
+.fc-prev-button.fc-button.fc-button-primary {
+  background-color: #ec4469 !important;
+  border-color: #ec4469 !important;
+  border-radius: 30px;
+  // border: 2px solid #EC4369;
+}
+.fc-next-button.fc-button.fc-button-primary {
+  background-color: #ec4469 !important;
+  border-color: #ec4469 !important;
+  border-radius: 30px;
+}
+.fc-icon.fc-icon-chevron-right {
+  color: white !important;
 }
