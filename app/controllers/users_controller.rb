@@ -46,7 +46,7 @@ class UsersController < ApplicationController
     @booking = Booking.new
     @parent = current_user
     @reviews = Review.where(nanny: @user)
-    @avg_rating = Review.average(:rating)
+    @avg_rating = @reviews.average(:rating)
   end
 
   private
