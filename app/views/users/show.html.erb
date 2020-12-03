@@ -21,11 +21,17 @@
             <%= cl_image_tag @user.photo.key, class:"avatar-very-large1", width: 300, height: 300, :gravity=>"face", crop: :thumb %>
           </div>
           <div class="show-card__info">
-            <i class="fas fa-star fa-lg"></i> 
-            <i class="fas fa-star fa-lg"></i>
-            <i class="fas fa-star fa-lg"></i>
-            <i class="fas fa-star fa-lg"></i>
-            <i class="fas fa-star fa-lg"></i>
+            <% num = 0 %>
+            <% if @avg_rating != nil %>
+              <% num = num + @avg_rating.round %>
+            <% end %>
+            <% num.times do %>
+              <i class="fas fa-star fa-lg" style= "color: orange"></i> 
+            <% end %>
+            <% diff = 5 - num %>
+            <% diff.times do %>
+              <i class="fas fa-star fa-lg" style = "color:lightgray"></i>
+            <% end %>
           </div> 
           <ul class="details-list1">
             <li class="large-font-show"><strong><%= @user.first_name %> <%= @user.last_name %></strong></li>
