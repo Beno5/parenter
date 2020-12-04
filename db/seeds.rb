@@ -352,12 +352,23 @@ puts 'Creating fake users...'
   booking4 = Booking.create(nanny: martina, parent: greg, start_date: "2020-12-05 19:00:00", end_date: "2020-12-05 21:00:00", status: "confirmed")
   booking5 = Booking.create(nanny: mario, parent: arthur, start_date: "2020-12-05 16:00:00", end_date: "2020-12-05 17:00:00", status: "pending")
 
-  review5 = Review.create(nanny: sarah, parent: greg, content: 'Sarah was very good and kids love her!', rating: 5)
+  ## review5 = Review.create(nanny: sarah, parent: greg, content: 'Sarah was very good and kids love her!', rating: 5)
   review3 = Review.create(nanny: mario, parent: greg, content: 'Mario is a very good babysitter. He is very kind and always flexible', rating: 4)
   review2 = Review.create(nanny: mario, parent: philip, content: 'Mario is not bad. He tries his best but my kids are just too naughty', rating: 3)
   review1 = Review.create(nanny: mario, parent: bill, content: 'I highly recommend Mario. He likes to have fun with the kids and my kids always ask when is Mario coming again', rating: 5)
   review4 = Review.create(nanny: mario, parent: hans, content: 'Mario is very cheap but also worth every penny!', rating: 5)
   review6 = Review.create(nanny: martina, parent: philip, content: 'I love Martina. She is very flexible and always comes on time', rating: 4)
   review7 = Review.create(nanny: martina, parent: arthur, content: 'I love the fact that Martina is able to over to our place as sometimes I do not have time to drop of my daughter at her place', rating: 5)
-puts 'Finished!'
+  ## review5 = Review.create(nanny: alice, parent: greg, content: 'Alice was very good and kids love her!', rating: 5)
+  review5 = Review.create(nanny: helen, parent: greg, content: 'Helen was okej!', rating: 3)
+  review5 = Review.create(nanny: lucy, parent: greg, content: 'Lucy was not there on time!', rating: 1)
+  review5 = Review.create(nanny: teresa, parent: greg, content: 'Sarah was very good and kids love her!', rating: 4)
+  review5 = Review.create(nanny: bob, parent: greg, content: 'Bob was not so frendly!', rating: 3)
+  review5 = Review.create(nanny: alfred, parent: greg, content: 'Alfred was okey!', rating: 4)
+  review5 = Review.create(nanny: kasey, parent: greg, content: 'Kesey was very rude in one moment and I do not recommend her!', rating: 1)
+  review5 = Review.create(nanny: darlene, parent: greg, content: 'Darlene was bad!', rating: 2)
+  review5 = Review.create(nanny: catherine, parent: greg, content: 'Catherine was very good and kids love her!', rating: 5)
+  review5 = Review.create(nanny: hallie, parent: greg, content: 'Hallie was cold to the kids!', rating: 3)
+
+    puts 'Finished!'
 
