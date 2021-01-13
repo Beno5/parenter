@@ -361,14 +361,14 @@ puts 'Creating fake users...'
   review7 = Review.create(nanny: martina, parent: arthur, content: 'I love the fact that Martina is able to over to our place as sometimes I do not have time to drop of my daughter at her place', rating: 5)
   ## review5 = Review.create(nanny: alice, parent: greg, content: 'Alice was very good and kids love her!', rating: 5)
   review5 = Review.create(nanny: helen, parent: greg, content: 'Helen was okej!', rating: 3)
-  review5 = Review.create(nanny: lucy, parent: greg, content: 'Lucy was not there on time!', rating: 1)
-  review5 = Review.create(nanny: teresa, parent: greg, content: 'Sarah was very good and kids love her!', rating: 4)
-  review5 = Review.create(nanny: bob, parent: greg, content: 'Bob was not so frendly!', rating: 3)
-  review5 = Review.create(nanny: alfred, parent: greg, content: 'Alfred was okey!', rating: 4)
-  review5 = Review.create(nanny: kasey, parent: greg, content: 'Kesey was very rude in one moment and I do not recommend her!', rating: 1)
-  review5 = Review.create(nanny: darlene, parent: greg, content: 'Darlene was bad!', rating: 2)
-  review5 = Review.create(nanny: catherine, parent: greg, content: 'Catherine was very good and kids love her!', rating: 5)
-  review5 = Review.create(nanny: hallie, parent: greg, content: 'Hallie was cold to the kids!', rating: 3)
+  review8 = Review.create(nanny: lucy, parent: greg, content: 'Lucy was not there on time!', rating: 1)
+  review9 = Review.create(nanny: teresa, parent: greg, content: 'Sarah was very good and kids love her!', rating: 4)
+  review10 = Review.create(nanny: bob, parent: greg, content: 'Bob was not so frendly!', rating: 3)
+  review11 = Review.create(nanny: alfred, parent: greg, content: 'Alfred was okey!', rating: 4)
+  review12 = Review.create(nanny: kasey, parent: greg, content: 'Kesey was very rude in one moment and I do not recommend her!', rating: 1)
+  review13 = Review.create(nanny: darlene, parent: greg, content: 'Darlene was bad!', rating: 2)
+  review14 = Review.create(nanny: catherine, parent: greg, content: 'Catherine was very good and kids love her!', rating: 5)
+  review15 = Review.create(nanny: hallie, parent: greg, content: 'Hallie was cold to the kids!', rating: 3)
 
     puts 'Finished!'
 
