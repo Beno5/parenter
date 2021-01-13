@@ -88,7 +88,7 @@ ActiveRecord::Schema.define(version: 2020_12_01_105151) do
     t.integer "number_of_kids"
     t.boolean "can_host"
     t.integer "year_of_birth"
-    t.boolean "is_nanny"
+    t.boolean "is_nanny", default: false
     t.float "latitude"
     t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
